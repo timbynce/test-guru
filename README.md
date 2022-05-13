@@ -1,24 +1,16 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This README is test file about Test-Guru objects.
 
-Things you may want to cover:
+Objects:
+* User
+* Administrator
+* Test blank
+* Test questions
+* List of tests
+* Score (rules of scroing. But i think it's user attribute)
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+NOT FROM REAL WOLRD:
+* Administative interface
+* History of completed test (per user)
+...
