@@ -34,4 +34,3 @@ Result.create(
   [{ passed: false, test_id: 3, user_id: 3 }, { passed: true, test_id: 2, user_id: 3 },
    { passed: false, test_id: 4, user_id: 3}  
  ])
- 
