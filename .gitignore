@@ -18,8 +18,6 @@
 !/log/.keep
 !/tmp/.keep
 
-/config/database.yml
-
 # Ignore pidfiles, but keep the directory.
 /tmp/pids/*
 !/tmp/pids/
@@ -34,6 +32,7 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+/config/database.yml
 
 /public/packs
 /public/packs-test
