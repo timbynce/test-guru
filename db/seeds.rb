@@ -47,9 +47,9 @@ answers = Answer.create!([
 { body: "16", question_id: questions[2].id },
 { body: "7", question_id: questions[2].id },
 { body: "82", question_id: questions[3].id, correct: true },
-{ body: "50", question_id: questions[2].id },
-{ body: "61", question_id: questions[2].id },
-{ body: "80", question_id: questions[2].id }
+{ body: "50", question_id: questions[3].id },
+{ body: "61", question_id: questions[3].id },
+{ body: "80", question_id: questions[3].id }
 ])
 
 results = Result.create!([
