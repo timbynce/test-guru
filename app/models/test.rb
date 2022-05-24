@@ -8,11 +8,10 @@ class Test < ApplicationRecord
   has_many :results, dependent: :destroy
   has_many :users, through: :results, dependent: :destroy
 
-  def self.list_by_category(title)  
+  def self.list_by_category(title)
     joins(:category)
       .where(categories: { title: title })
       .order(title: :desc)
       .pluck(:title)
   end
-
 end

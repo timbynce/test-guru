@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Result.destroy_all
 Answer.destroy_all
 Question.destroy_all
