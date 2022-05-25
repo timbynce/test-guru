@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Result.destroy_all
 Answer.destroy_all
 Question.destroy_all
@@ -20,40 +22,40 @@ users = User.create!([
                      ])
 
 tests = Test.create!([
-                       { title: 'Ruby', category_id: categories[0].id, level: 3, author_id: users[1].id },
-                       { title: 'JS', category_id: categories[0].id, level: 3, author_id: users[1].id },
-                       { title: 'Java', category_id: categories[1].id, level: 4, author_id: users[2].id },
-                       { title: 'Basketball', category_id: categories[4].id, level: 1, author_id: users[0].id }
+                       { title: 'Ruby', category: categories[0], level: 3, author: users[1] },
+                       { title: 'JS', category: categories[0], level: 3, author: users[1] },
+                       { title: 'Java', category: categories[1], level: 4, author: users[2] },
+                       { title: 'Basketball', category: categories[4], level: 1, author: users[0] }
                      ])
 
 questions = Question.create!([
-                               { body: 'How to create empty hash in Ruby?', test_id: tests[0].id },
-                               { body: 'How to install Rubocop?', test_id: tests[0].id },
-                               { body: 'How many teams are there in the NBA?', test_id: tests[3].id },
-                               { body: 'How many games are threr in an NBA season?', test_id: tests[3].id }
+                               { body: 'How to create empty hash in Ruby?', test: tests[0] },
+                               { body: 'How to install Rubocop?', test: tests[0] },
+                               { body: 'How many teams are there in the NBA?', test: tests[3] },
+                               { body: 'How many games are threr in an NBA season?', test: tests[3] }
                              ])
 
 answers = Answer.create!([
-                           { body: 'Just type = {}', question_id: questions[0].id, correct: true },
-                           { body: 'Just type = []', question_id: questions[0].id },
-                           { body: 'Just type = CREATE_EMPTY_HASH', question_id: questions[0].id },
-                           { body: 'Just type = HASH_ME!', question_id: questions[0].id },
-                           { body: 'gem install rubocop', question_id: questions[1].id, correct: true },
-                           { body: 'pip install rubocop', question_id: questions[1].id },
-                           { body: 'sudo ustanovka rubocopa', question_id: questions[1].id },
-                           { body: 'install_rubocop', question_id: questions[1].id },
-                           { body: '30', question_id: questions[2].id, correct: true },
-                           { body: '32', question_id: questions[2].id },
-                           { body: '16', question_id: questions[2].id },
-                           { body: '7', question_id: questions[2].id },
-                           { body: '82', question_id: questions[3].id, correct: true },
-                           { body: '50', question_id: questions[3].id },
-                           { body: '61', question_id: questions[3].id },
-                           { body: '80', question_id: questions[3].id }
+                           { body: 'Just type = {}', question: questions[0], correct: true },
+                           { body: 'Just type = []', question: questions[0] },
+                           { body: 'Just type = CREATE_EMPTY_HASH', question: questions[0] },
+                           { body: 'Just type = HASH_ME!', question: questions[0] },
+                           { body: 'gem install rubocop', question: questions[1], correct: true },
+                           { body: 'pip install rubocop', question: questions[1] },
+                           { body: 'sudo ustanovka rubocopa', question: questions[1] },
+                           { body: 'install_rubocop', question: questions[1] },
+                           { body: '30', question: questions[2], correct: true },
+                           { body: '32', question: questions[2] },
+                           { body: '16', question: questions[2] },
+                           { body: '7', question: questions[2] },
+                           { body: '82', question: questions[3], correct: true },
+                           { body: '50', question: questions[3] },
+                           { body: '61', question: questions[3] },
+                           { body: '80', question: questions[3] }
                          ])
 
 results = Result.create!([
-                           { passed: false, test_id: tests[0].id, user_id: users[0].id },
-                           { passed: false, test_id: tests[1].id, user_id: users[0].id },
-                           { passed: true, test_id: tests[3].id, user_id: users[1].id }
+                           { passed: false, test: tests[0], user: users[0] },
+                           { passed: false, test: tests[1], user: users[0] },
+                           { passed: true, test: tests[3], user: users[1] }
                          ])
