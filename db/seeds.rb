@@ -24,7 +24,7 @@ users = User.create!([
 tests = Test.create!([
                        { title: 'Ruby', category: categories[0], level: 3, author: users[1] },
                        { title: 'JS', category: categories[0], level: 3, author: users[1] },
-                       { title: 'Java', category: categories[1], level: 4, author: users[2] },
+                       { title: 'Java', category: categories[1], level: 6, author: users[2] },
                        { title: 'Basketball', category: categories[4], level: 1, author: users[0] }
                      ])
 
