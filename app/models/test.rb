@@ -4,9 +4,9 @@ class Test < ApplicationRecord
   belongs_to :category
   belongs_to :author, class_name: 'User'
 
-  has_many :questions
-  has_many :results
-  has_many :users, through: :results, dependent: :destroy
+  has_many :questions, dependent: :destroy
+  has_many :results, dependent: :destroy
+  has_many :users, through: :results
 
   validates :title, presence: true,
                     uniqueness: { scope: :level,
@@ -19,11 +19,12 @@ class Test < ApplicationRecord
   scope :advanced, -> { where(level: 2..4) }
   scope :hard, -> { where(level: 5..Float::INFINITY) }
 
-  scope :list_by_category, ->(category) {
-                             joins(:category)
-                               .where(categories: { title: category })
-                               .order(title: :desc)
-                           }
+  def self.list_by_category(title)
+    joins(:category)
+      .where(categories: { title: title })
+      .order(title: :desc)
+      .pluck(:title)
+  end
 
   scope :list_by_level, ->(level) { where(level: level) }
 end
