@@ -16,15 +16,15 @@ categories = Category.create!([
                               ])
 
 users = User.create!([
-                       { title: 'Steve Ballmer' },
-                       { title: 'Paul Allen' },
-                       { title: 'Bill Gates' }
+                       { title: 'Steve Ballmer', email: "steve@ms.com" },
+                       { title: 'Paul Allen', email: "paul@ms.com" },
+                       { title: 'Bill Gates', email: "billyms.com" }
                      ])
 
 tests = Test.create!([
                        { title: 'Ruby', category: categories[0], level: 3, author: users[1] },
                        { title: 'JS', category: categories[0], level: 3, author: users[1] },
-                       { title: 'Java', category: categories[1], level: 4, author: users[2] },
+                       { title: 'Java', category: categories[1], level: 6, author: users[2] },
                        { title: 'Basketball', category: categories[4], level: 1, author: users[0] }
                      ])
 
