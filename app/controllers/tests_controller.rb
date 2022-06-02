@@ -1,4 +1,5 @@
 class TestsController < ApplicationController
+  rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_test_not_found
 
   def index
     @tests = Test.all
@@ -22,5 +23,9 @@ class TestsController < ApplicationController
 
   def test_params
     params.require(:test).permit(:title, :level, :category_id, :author_id)
+  end
+
+  def rescue_with_test_not_found
+    render plain: "Test wasn't found"
   end
 end
