@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class TestsController < ApplicationController
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_test_not_found
 
@@ -11,8 +13,7 @@ class TestsController < ApplicationController
     render html: { tests: @test }
   end
 
-  def new
-  end
+  def new; end
 
   def create
     @test = Test.create(test_params)

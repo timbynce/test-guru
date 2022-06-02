@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 class QuestionsController < ApplicationController
   before_action :find_test
 
   def index
     @questions = @test.questions
-    render html: { tests: @test.questions}
+    render html: { tests: @test.questions }
   end
 
   def show
@@ -11,8 +13,7 @@ class QuestionsController < ApplicationController
     render html: { tests: @question }
   end
 
-  def new
-  end
+  def new; end
 
   def create
     @question = @test.questions.create(question_params)
@@ -21,7 +22,7 @@ class QuestionsController < ApplicationController
 
   def destroy
     @question.destroy
-    render plain: "Question was successfully removed"
+    render plain: 'Question was successfully removed'
   end
 
   private
