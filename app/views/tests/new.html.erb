@@ -12,12 +12,17 @@
 
   <p>
     <label for="test-category">Category:</label>
-    <input type="text" name="test[category]" id="test-category">
+  </p><br>
+  
+  <p>
+    <%= select_tag "test[category_id]", options_for_select(Category.all.collect{|category| [category.title,category.id]}), {:multiple => :multiple} %>
   </p><br>
 
   <p>
     <label for="test-category">Author:</label>
-    <input type="text" name="test[author]" id="test-author">
+  </p><br>
+  <p>
+    <%= select_tag "test[author_id]", options_for_select(User.all.collect{|author| [author.title,author.id]}), {:multiple => :multiple} %>
   </p><br>
 
     <input type="submit" value="Create">
