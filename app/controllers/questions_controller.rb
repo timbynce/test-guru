@@ -2,6 +2,8 @@
 
 class QuestionsController < ApplicationController
   before_action :find_test
+  before_action :find_question, only: [:show, :destroy]
+
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
 
   def index
@@ -9,22 +11,22 @@ class QuestionsController < ApplicationController
   end
 
   def show
-    question = @test.questions.find(params[:id])
-
-    render plain: { test: question }
+    render plain: { test: @question }
   end
 
   def new; end
 
   def create
-    question = @test.questions.create(question_params)
-
-    render plain: question.inspect
+    @question = @test.questions.create(question_params)
+    if @question.save
+      render plain: 'Question was successfully added'
+    else
+      render :new
+    end
   end
 
   def destroy
-    question = @test.questions.find(params[:id])
-    question.destroy
+    @question.destroy
 
     render plain: 'Question was successfully removed'
   end
@@ -32,11 +34,15 @@ class QuestionsController < ApplicationController
   private
 
   def question_params
-    params.require(:question).permit(:body, :test_id)
+    params.require(:question).permit(:body)
   end
 
   def find_test
     @test = Test.find(params[:test_id])
+  end
+
+  def find_question
+    @question = @test.questions.find(params[:id])
   end
 
   def rescue_with_question_not_found
