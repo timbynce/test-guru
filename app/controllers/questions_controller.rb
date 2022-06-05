@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class QuestionsController < ApplicationController
-  before_action :find_test, except: [:show, :destroy]
+  before_action :find_test, only: [:index, :new, :create]
   before_action :find_question, only: [:show, :destroy]
 
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
@@ -20,7 +20,6 @@ class QuestionsController < ApplicationController
     @question = @test.questions.build(question_params)
     if @question.save
       redirect_to @question
-      @question
     else
       render :new
     end
