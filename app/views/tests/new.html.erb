@@ -1,0 +1,29 @@
+<h1>Create New Test</h1>
+<form action="/tests" method="post">
+  <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+  <p>
+    <label for="test_title">Title:</label>
+    <input type="text" name="test[title]" id="test-title">
+    </p><br>
+  <p>
+    <label for="test-level">Level:</label>
+    <input type="text" name="test[level]" id="test-level">
+  </p><br>
+
+  <p>
+    <label for="test-category">Category:</label>
+  </p><br>
+  
+  <p>
+    <%= select_tag "test[category_id]", options_for_select(Category.all.collect{|category| [category.title,category.id]}), {:multiple => :multiple} %>
+  </p><br>
+
+  <p>
+    <label for="test-category">Author:</label>
+  </p><br>
+  <p>
+    <%= select_tag "test[author_id]", options_for_select(User.all.collect{|author| [author.title,author.id]}), {:multiple => :multiple} %>
+  </p><br>
+
+    <input type="submit" value="Create">
+</form>
