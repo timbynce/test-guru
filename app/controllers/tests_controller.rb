@@ -32,10 +32,9 @@ class TestsController < ApplicationController
     redirect_to tests_path
   end
 
-  def edit;  end
+  def edit; end
 
   def update
-
     if @test.update(test_params)
       redirect_to @test
     else
