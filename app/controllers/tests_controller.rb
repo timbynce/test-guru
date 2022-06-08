@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class TestsController < ApplicationController
-  before_action :find_test, only: %i[show destroy]
+  before_action :find_test, only: %i[show destroy edit update]
   before_action :find_questions, only: [:show]
 
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_test_not_found
@@ -32,12 +32,9 @@ class TestsController < ApplicationController
     redirect_to tests_path
   end
 
-  def edit
-    @test = Test.find(params[:id])
-  end
+  def edit;  end
 
   def update
-    @test = Test.find(params[:id])
 
     if @test.update(test_params)
       redirect_to @test
