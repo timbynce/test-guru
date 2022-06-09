@@ -1,25 +1,20 @@
 # frozen_string_literal: true
 
 class QuestionsController < ApplicationController
-  before_action :find_test, only: [:index, :new, :create]
-  before_action :find_question, only: [:show, :destroy]
+  before_action :find_test, only: %i[new create]
+  before_action :find_question, only: %i[show destroy edit update]
 
-  rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
+  def show; end
 
-  def index
-    render plain: { tests: @test.questions }
+  def new
+    @question = @test.questions.new
   end
-
-  def show
-    render plain: { test: @question }
-  end
-
-  def new; end
 
   def create
     @question = @test.questions.build(question_params)
+
     if @question.save
-      redirect_to @question
+      redirect_to @test
     else
       render :new
     end
@@ -28,7 +23,17 @@ class QuestionsController < ApplicationController
   def destroy
     @question.destroy
 
-    render plain: 'Question was successfully removed'
+    redirect_to @question.test
+  end
+
+  def edit; end
+
+  def update
+    if @question.update(question_params)
+      redirect_to @question.test
+    else
+      render :edit
+    end
   end
 
   private
@@ -43,9 +48,5 @@ class QuestionsController < ApplicationController
 
   def find_question
     @question = Question.find(params[:id])
-  end
-
-  def rescue_with_question_not_found
-    render plain: "Question wasn't found"
   end
 end
