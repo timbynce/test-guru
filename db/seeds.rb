@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-Result.destroy_all
+TestPassage.destroy_all
 Answer.destroy_all
 Question.destroy_all
 Test.destroy_all
@@ -54,8 +54,8 @@ answers = Answer.create!([
                            { body: '80', question: questions[3] }
                          ])
 
-results = Result.create!([
-                           { passed: false, test: tests[0], user: users[0] },
-                           { passed: false, test: tests[1], user: users[0] },
-                           { passed: true, test: tests[3], user: users[1] }
+results = TestPassage.create!([
+                           { user: users[0], test: tests[0], current_question: questions[0], correct_questions: 1 },
+                           { user: users[1], test: tests[0], current_question: questions[1], correct_questions: 0 },
+                           { user: users[2], test: tests[3], current_question: questions[3], correct_questions: 1 }
                          ])

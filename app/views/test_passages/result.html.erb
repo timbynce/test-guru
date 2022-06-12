@@ -1,0 +1,10 @@
+<h1>Completed</h1>
+
+<p>
+Correct: <%= @test_passage.correct_questions %> from <%= @test_passage.test.questions.count %>
+</p>
+<p style=<%= result_color(@test_passage.good_result?) %>>
+<%= result_text(@test_passage.good_result?) %> ( <%= @test_passage.result_percent %> %)
+<p>
+
+<p><%= link_to 'Back to Tests List', tests_path%> </p>
