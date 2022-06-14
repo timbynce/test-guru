@@ -8,9 +8,7 @@ Rails.application.routes.draw do
       resources :answers, except: [:index], shallow: true
     end 
 
-    member do
-      post :start
-    end
+      post :start, on: :member
   end
 
   resources :test_passages, only: %i[show update] do

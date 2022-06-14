@@ -6,9 +6,7 @@ module TestPassagesHelper
   end
 
   def result_color(test_passage)
-    return 'green' if test_passage.good_result?
-
-    'red'
+    test_passage.good_result? ? 'green' : 'red'
   end
 
   def result_text(test_passage)

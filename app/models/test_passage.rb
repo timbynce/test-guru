@@ -7,12 +7,9 @@ class TestPassage < ApplicationRecord
   belongs_to :test
   belongs_to :current_question, class_name: 'Question', optional: true
 
-  before_validation :before_validation_set_first_question, on: :create
-  before_update :next_question, if: -> { answer_ids.present? }
+  before_validation :set_current_question 
 
   delegate :questions, :title, to: :test
-
-  attr_reader :answer_ids
 
   def completed?
     current_question.nil?
@@ -30,9 +27,9 @@ class TestPassage < ApplicationRecord
     (correct_questions * 100.00) / questions.count
   end
 
-  def answer_ids=(answer_ids)
+  def answered_questions_ids=(answer_ids)
     @answer_ids = answer_ids
-
+  
     self.correct_questions += 1 if correct_answer?(answer_ids)
   end
 
@@ -41,15 +38,13 @@ class TestPassage < ApplicationRecord
   end
 
   private
-
-  def before_validation_set_first_question
-    self.current_question = questions.first if test.present?
+  
+  def set_current_question    
+    self.current_question = next_question
   end
 
   def correct_answer?(answer_ids)
-    correct_answers_count = correct_answers.count
-
-    correct_answers.ids.sort == answer_ids.map(&:to_i).sort
+    correct_answers.ids.sort == answer_ids.map(&:to_i).sort && answer_ids.present?
   end
 
   def correct_answers
@@ -57,6 +52,9 @@ class TestPassage < ApplicationRecord
   end
 
   def next_question
-    self.current_question = questions.following(current_question).first
+    return questions.first unless @answer_ids.present?
+    
+    questions.following(current_question).first 
   end
+
 end
