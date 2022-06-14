@@ -1,8 +1,7 @@
 # frozen_string_literal: true
 
 class TestsController < ApplicationController
-  before_action :find_test, only: %i[show destroy edit update]
-  before_action :find_questions, only: [:show]
+  before_action :find_test, only: %i[show destroy edit update start]
 
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_test_not_found
 
@@ -10,7 +9,9 @@ class TestsController < ApplicationController
     @tests = Test.all
   end
 
-  def show; end
+  def show
+    @questions = @test.questions
+  end
 
   def new
     @test = Test.new
@@ -42,14 +43,16 @@ class TestsController < ApplicationController
     end
   end
 
+  def start
+    @user = User.first
+    @user.tests.push(@test)
+    redirect_to @user.test_passage(@test)
+  end
+
   private
 
   def find_test
     @test = Test.find(params[:id])
-  end
-
-  def find_questions
-    @questions = @test.questions
   end
 
   def test_params
