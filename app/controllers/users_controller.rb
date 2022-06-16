@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class UsersController < ApplicationController
   def new
     @user = User.new
@@ -10,11 +12,11 @@ class UsersController < ApplicationController
       redirect_to login_path
     else
       render :new
-    end    
+    end
   end
 
   private
-  
+
   def user_params
     params.require(:user).permit(:title, :email, :password, :password_confirmation)
   end
@@ -22,5 +24,4 @@ class UsersController < ApplicationController
   def check_email_uniq(email)
     User.find_by(email: email)
   end
-
 end

@@ -7,7 +7,7 @@ class TestPassage < ApplicationRecord
   belongs_to :test
   belongs_to :current_question, class_name: 'Question', optional: true
 
-  before_validation :set_current_question 
+  before_validation :set_current_question
 
   delegate :questions, :title, to: :test
 
@@ -29,7 +29,7 @@ class TestPassage < ApplicationRecord
 
   def answered_questions_ids=(answer_ids)
     @answer_ids = answer_ids
-  
+
     self.correct_questions += 1 if correct_answer?(answer_ids)
   end
 
@@ -38,8 +38,8 @@ class TestPassage < ApplicationRecord
   end
 
   private
-  
-  def set_current_question    
+
+  def set_current_question
     self.current_question = next_question
   end
 
@@ -53,8 +53,7 @@ class TestPassage < ApplicationRecord
 
   def next_question
     return questions.first unless @answer_ids.present?
-    
-    questions.following(current_question).first 
-  end
 
+    questions.following(current_question).first
+  end
 end
