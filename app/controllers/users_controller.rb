@@ -20,8 +20,4 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:title, :email, :password, :password_confirmation)
   end
-
-  def check_email_uniq(email)
-    User.find_by(email: email)
-  end
 end

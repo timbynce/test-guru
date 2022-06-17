@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-VALID_EMAIL_FORMAT = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i.freeze
-
 require 'digest/sha1'
 
 class User < ApplicationRecord
+  VALID_EMAIL_FORMAT = URI::MailTo::EMAIL_REGEXP.freeze
+
   has_many :test_passages
   has_many :tests, through: :test_passages
   has_many :tests_by_author, class_name: 'Test', foreign_key: :author_id
