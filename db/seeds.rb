@@ -16,9 +16,9 @@ categories = Category.create!([
                               ])
 
 users = User.create!([
-                       { title: 'Steve Ballmer', email: 'stevebalmer@microsoft.com', password_digest: 'fooooooooooooooo' },
-                       { title: 'Paul Allen', email: 'paul@microsoft.com', password_digest: 'fooooooooooooooo' },
-                       { title: 'Bill Gates', email: 'bill@microsoft.com', password_digest: 'fooooooooooooooo' }
+                       { first_name: 'Steve', last_name: 'Ballmer', email: 'stevebalmer@microsoft.com', password: '12345a' },
+                       { first_name: 'Paul', last_name:  'Allen', email: 'paul@microsoft.com', password: '12345a' },
+                       { first_name: 'Bill', last_name:  ' Gates', email: 'bill@microsoft.com', password: '12345a' }
                      ])
 
 tests = Test.create!([

@@ -9,7 +9,11 @@ module ApplicationHelper
     link_to author, "https://github.com/#{author}/#{repo}", target: '_blank'
   end
 
-  def flash_messages(type)
-    content_tag(:p, flash[type], class: "flash #{type}") if flash[type]
+  def flash_messages
+    content_tag :div do
+      flash.each do |key, message|
+        concat content_tag(:p, message, class: "flash #{key}")
+      end
+    end
   end
 end
