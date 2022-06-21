@@ -20,6 +20,8 @@ users = User.create!([
                        { first_name: 'Paul', last_name:  'Allen', email: 'paul@microsoft.com', password: '12345a' },
                        { first_name: 'Bill', last_name:  ' Gates', email: 'bill@microsoft.com', password: '12345a' }
                      ])
+                     
+admins = Admin.create!([{ first_name: 'Artem', last_name: 'Bynce', email: 'cherar@example.com', password: '12345a' }])
 
 tests = Test.create!([
                        { title: 'Ruby', category: categories[0], level: 3, author: users[1] },

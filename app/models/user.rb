@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 class User < ApplicationRecord
-
   VALID_EMAIL_FORMAT = URI::MailTo::EMAIL_REGEXP.freeze
 
   # Include default devise modules. Others available are:

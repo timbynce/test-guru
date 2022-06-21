@@ -17,8 +17,7 @@
   </p>
 
   <p>
-    <%= form.label :author_id %><br>
-    <%= form.collection_select :author_id, User.all, :id, :title, promt: true %>
+    <%= form.hidden_field :author_id, value: current_user.id %>
   </p>
 
   <p><%= form.submit %></p>
