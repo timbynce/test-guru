@@ -17,9 +17,7 @@ class Admin::TestsController < Admin::BaseController
   end
 
   def create
-    params[:author_id] = current_user.id
-    @test = Test.new(test_params)
-
+    @test = current_user.tests_by_author.build(test_params)
     if @test.save
       redirect_to admin_tests_path
     else
