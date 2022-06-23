@@ -1,4 +1,4 @@
-<h1>Completed</h1>
+<h1><%= t('.header', title: @test_passage.test.title) %></h1>
 
 <p>
 <%= result_title(@test_passage) %>
@@ -7,4 +7,4 @@
 <%= result_text(@test_passage) %>
 <p>
 
-<p><%= link_to 'Back to Tests List', tests_path%> </p>
+<p><%= link_to t('.back'), tests_path%> </p>
