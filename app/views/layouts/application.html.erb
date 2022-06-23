@@ -10,15 +10,17 @@
   </head>
 
   <body>
-    <% if logged_in? %>
-      <p class="nav user"> <b> <%= link_to 'Test Guru', tests_path, method: :get %> <b> </p>
-      <p class="nav user">Welcome, <b><%= current_user.title %><b> Guru </p>
-      <p class="nav user"> <%= link_to 'Sign out', logout_path, method: :delete %> </p>
+    <% if user_signed_in? %>
+      <p class="nav_user">
+      Welcome, <%= current_user.first_name %> <%= current_user.last_name %> <b> Guru |
+      <%= link_to 'Logout', destroy_user_session_path, method: :delete%>
+      </p>
     <% else %>
       <p class="nav guest"> <b> <%= link_to 'Test Guru', tests_path, method: :get %> <b> </p>
-      <p class="nav guest"> <%= link_to 'Sign in', login_path, method: :get %> / <%=link_to 'Registration', signup_path, method: :get%> </p>
+      <p class="nav guest"> <%= link_to 'Sign in', new_user_session_path, method: :get %> / <%=link_to 'Registration', new_user_registration_path, method: :get%> </p>
     <% end %>
 
+    <%= render 'shared/flash' %>
     
     <%= yield %>
 
