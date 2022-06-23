@@ -2,10 +2,10 @@
   <td><%= test.title %></td>
   <td><%= test_level(test) %></td>
   <td><%= test.questions.count %></td>
-  <td><%= link_to t('.show'), admin_test_path(test) %></td>
-  <td><%= link_to t('.edit'), edit_admin_test_path(test) %></td>
+  <td><%= link_to t('show', scope: 'helpers.submit'), admin_test_path(test) %></td>
+  <td><%= link_to t('edit', scope: 'helpers.submit'), edit_admin_test_path(test) %></td>
   <td>
-    <%= link_to t('.delete'),
+    <%= link_to t('delete', scope: 'helpers.submit'),
                 admin_test_path(test),
                 method: :delete,
                 data: { confirm: t('.delete_confirmation') } %>

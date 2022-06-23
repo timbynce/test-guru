@@ -1,9 +1,9 @@
 <tr>
   <td><%= question.body %></td>
-  <td><%= link_to t('.show'), admin_question_path(question) %></td>
-  <td><%= link_to t('.edit'), edit_admin_question_path(question) %></td>
+  <td><%= link_to t('show', scope: 'helpers.submit'), admin_question_path(question) %></td>
+  <td><%= link_to t('edit', scope: 'helpers.submit'), edit_admin_question_path(question) %></td>
   <td>
-    <%= link_to t('.delete'),
+    <%= link_to t('delete', scope: 'helpers.submit'),
                 admin_question_path(question),
                 method: :delete,
                 data: { confirm: t('.delete_confirmation') } %>

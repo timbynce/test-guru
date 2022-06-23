@@ -1,34 +1,3 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at https://guides.rubyonrails.org/i18n.html.
-
 en:
   hello: "Hello world"
 
@@ -37,6 +6,10 @@ en:
       test:
         create: "Create test"
         update: "Update test"
+    back: "Back"
+    show: "Show"
+    edit: "Edit"
+    delete: "Delete"
 
     label:
       test:
@@ -63,29 +36,17 @@ en:
       level: "Level"
       questions: "Questions"
       new_question: "New question"
-      edit: "Edit"
-      back: "Back"
-    new:
-      back: "Back"
-    edit:
-      back: "Back"
-    test:
-      show: "Show"
-      edit: "Edit"
-      delete: "Delete"
     test:
       start: "Start"
       easy: "Easy"
       advanced: "Advanced"
       hard: "Hard"
 
-
   test_passages:
     result:
       header: "Test %{title} was successfully completed"
     show:
       header: "Passing %{title} test"
-      back: "Back"
       current_question: "Question %{question_num}/%{questions_count}"
     result:
       correct: "Correct: %{correct_questions} from %{questions_count}"
@@ -106,24 +67,23 @@ en:
         level: "Level"
         questions: "Questions"
         actions: "Actions"
+        new_test: "New Test"
       show:
+        title: "Title"
+        level: "Level"
+        questions: "Questions"
         new_question: "New question"
-        edit: "Edit"
-        back: "Show"
       test:
-        show: "Show"
-        edit: "Edit"
-        delete: Delete"
         delete_confirmation: "Are you sure?"
       create:
         success: "Test was successfully created"
+      edit:
+        header: "Test edit"
+      new:
+        header: "Create new test"
     questions:
       question:
-        show: "Show"
-        edit: "Edit"
-        delete: Delete"
-        delete_confirmation: "Are you sure?"
-          
+        delete_confirmation: "Are you sure?"          
 
   tests_mailer:
     completed_test:
@@ -131,7 +91,7 @@ en:
 
   layouts:
     admin:
-      panel_title: "Панель администратора"
+      panel_title: "Admin panel"
     footer:
       about: "This is test-guru. Project about tests, rails and how to become guru of ROR."
     application:

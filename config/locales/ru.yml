@@ -6,6 +6,10 @@ ru:
       test:
         create: "Создать тест"
         update: "Обновить тест"
+      back: "Назад"
+      show: "Показать"
+      edit: "Изменить"
+      delete: "Удалить"
         
     label:
       test:
@@ -39,7 +43,6 @@ ru:
       header: "Тест %{title} успешно завершен"
     show:
       header: "Сдаем тест %{title}"
-      back: "Назад"
       current_question: "Вопрос %{question_num}/%{questions_count}"
     result:
       correct: "Правильно: %{correct_questions} из %{questions_count}"
@@ -66,24 +69,16 @@ ru:
         level: "Уровень"
         questions: "Вопросы"
         new_question: "Новый вопрос"
-        edit: "Изменить"
-        back: "Назад"
-      new:
-        back: "Назад"
-      edit:
-        back: "Назад"
       test:
-        show: "Показать"
-        edit: "Изменить"
-        delete: "Удалить"
         delete_confirmation: "Вы уверены?"
       create:
         success: "Тест успешно создан"
+      edit:
+        header: "Изменение теста"
+      new:
+        header: "Создание нового теста"
     questions:
       question:
-        show: "Показать"
-        edit: "Изменить"
-        delete: "Удалить"
         delete_confirmation: "Вы уверены?"
     
   tests_mailer:

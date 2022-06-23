@@ -14,7 +14,7 @@
     </p>  
   <% end %>
   
-  <p><%= link_to t('.back'), tests_path%> </p>
+  <p><%= link_to t('back', scope: 'helpers.submit'), tests_path %> </p>
 
   <p><%= form.submit %></p>
   <% end %>
