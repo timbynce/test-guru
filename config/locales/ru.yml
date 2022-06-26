@@ -1,0 +1,102 @@
+ru:
+  hello: "Привет мир"
+
+  helpers:
+    submit:
+      test:
+        create: "Создать тест"
+        update: "Обновить тест"
+      back: "Назад"
+      show: "Показать"
+      edit: "Изменить"
+      delete: "Удалить"
+        
+    label:
+      test:
+        title: "Название"
+        level: "Уровень"
+        category_id: "Категория"
+
+  shared:
+    errors:
+      header:
+        few: "Обнаружено %{count} ошибки"
+        many: "Обнаружено %{count} ошибок"
+        one: "Обнаружена %{count} ошибка"
+        other: "Обнаружено %{count} ошибки"
+
+  tests:
+    index:
+      header: "Доступные тесты"
+      title: "Название"
+      level: "Уровень"
+      questions: "Вопросы"
+      actions: "Действия"
+    test:
+      start: "Начать"
+      easy: "Начальный"
+      advanced: "Продвинутый"
+      hard: "Сложный"
+        
+  test_passages:
+    result:
+      header: "Тест %{title} успешно завершен"
+    show:
+      header: "Сдаем тест %{title}"
+      current_question: "Вопрос %{question_num}/%{questions_count}"
+    result:
+      correct: "Правильно: %{correct_questions} из %{questions_count}"
+      passed: "Ты сдал тест! %{result_percent}"
+      unpassed: "Ты не сдал тест! %{result_percent}"
+      header: "Тест %{title}"
+      back: "Назад к списку тестов"
+
+  admin:
+    nav:
+      welcome: "Привет, %{first_name} %{last_name} |"
+      logout: "Выйти"
+      panel: "Панель администратора TestGuru "
+    tests:
+      index:
+        header: "Доступные тесты"
+        title: "Название"
+        level: "Уровень"
+        questions: "Вопросы"
+        actions: "Действия"
+        new_test: "Новый тест"
+      show:
+        title: "Название"
+        level: "Уровень"
+        questions: "Вопросы"
+        new_question: "Новый вопрос"
+      test:
+        delete_confirmation: "Вы уверены?"
+      create:
+        success: "Тест успешно создан"
+      edit:
+        header: "Изменение теста"
+      new:
+        header: "Создание нового теста"
+    questions:
+      question:
+        delete_confirmation: "Вы уверены?"
+    
+  tests_mailer:
+    completed_test:
+      subject: "Ты выполнил тест!"
+
+  layouts:
+    admin:
+      panel_title: "Панель администратора"
+    footer:
+      about: "Это test-guru. Проект о тестах, их прохождении и о том как стать молодцом в ROR"
+    application:
+      welcome: "Привет, %{first_name} %{last_name} |"
+      logout: "Выйти"
+
+  categories:
+    Backend: "Backend"
+    Frontend: "Frontend"
+    Machine Learning: "Машинное обучение"
+    Mobile Dev: "Мобильная разработка"
+    Sports: "Спорт"

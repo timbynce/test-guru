@@ -12,8 +12,8 @@
   <body>
     <% if user_signed_in? %>
       <p class="nav_user">
-      Welcome, <%= current_user.first_name %> <%= current_user.last_name %> <b> Guru |
-      <%= link_to 'Logout', destroy_user_session_path, method: :delete%>
+      <%= t(".welcome", first_name: current_user.first_name, last_name: current_user.last_name) %>
+      <%= link_to t(".logout"), destroy_user_session_path, method: :delete%>
       </p>
     <% else %>
       <p class="nav guest"> <b> <%= link_to 'Test Guru', tests_path, method: :get %> <b> </p>

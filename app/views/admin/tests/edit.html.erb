@@ -1,5 +1,5 @@
-<h2>Edit Test</h2>
+<h2><%= t('.header') %></h2>
 
 <%= render 'form' %>
 
-<%= link_to 'Back', admin_tests_path%>
+<%= link_to t('back', scope: 'helpers.submit'), admin_tests_path %>

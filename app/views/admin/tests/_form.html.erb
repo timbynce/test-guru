@@ -13,7 +13,7 @@
 
   <p>
     <%= form.label :category_id %><br>
-    <%= form.collection_select :category_id, Category.all, :id, :title, promt: true %>
+    <%= form.collection_select :category_id, Category.all, :id, :title_translated, promt: true %>
   </p>
 
   <p><%= form.submit %></p>

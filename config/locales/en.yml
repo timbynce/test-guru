@@ -1,33 +1,106 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at https://guides.rubyonrails.org/i18n.html.
-
 en:
   hello: "Hello world"
+
+  helpers:
+    submit:
+      test:
+        create: "Create test"
+        update: "Update test"
+    back: "Back"
+    show: "Show"
+    edit: "Edit"
+    delete: "Delete"
+
+    label:
+      test:
+        title: "Title"
+        level: "Level"
+        category_id: "Category"
+
+  shared:
+    errors:
+      header:
+        one: "%{count} error detected"
+        other: "%{count} errors detected"
+
+  tests:
+    index:
+      header: "Tests"
+      title: "Title"
+      level: "Level"
+      questions: "Questions"
+      actions: "Actions"
+      new_test: "New test"
+    show:
+      title: "Title"
+      level: "Level"
+      questions: "Questions"
+      new_question: "New question"
+    test:
+      start: "Start"
+      easy: "Easy"
+      advanced: "Advanced"
+      hard: "Hard"
+
+  test_passages:
+    result:
+      header: "Test %{title} was successfully completed"
+    show:
+      header: "Passing %{title} test"
+      current_question: "Question %{question_num}/%{questions_count}"
+    result:
+      correct: "Correct: %{correct_questions} from %{questions_count}"
+      passed: "You passed test! %{result_percent}"
+      unpassed: "You didn't pass test! %{result_percent}"
+      header: "Test %{title}"
+      back: "Back to tests list"
+
+  admin:
+    nav:
+      welcome: "Welcome, %{first_name} %{last_name} |"
+      logout: "Log out"
+      panel: "TestGuru Admin Panel"
+    tests:
+      index:
+        header: "Tests"
+        title: "Title"
+        level: "Level"
+        questions: "Questions"
+        actions: "Actions"
+        new_test: "New Test"
+      show:
+        title: "Title"
+        level: "Level"
+        questions: "Questions"
+        new_question: "New question"
+      test:
+        delete_confirmation: "Are you sure?"
+      create:
+        success: "Test was successfully created"
+      edit:
+        header: "Test edit"
+      new:
+        header: "Create new test"
+    questions:
+      question:
+        delete_confirmation: "Are you sure?"          
+
+  tests_mailer:
+    completed_test:
+      subject: "You just completed test" 
+
+  layouts:
+    admin:
+      panel_title: "Admin panel"
+    footer:
+      about: "This is test-guru. Project about tests, rails and how to become guru of ROR."
+    application:
+      welcome: "Welcome, %{first_name} %{last_name} |"
+      logout: "Logout"
+
+  categories:
+    Backend: "Backend"
+    Frontend: "Frontend"
+    Machine Learning: "Machine Learning"
+    Mobile Dev: "Mobile Dev"
+    Sports: "Sports"

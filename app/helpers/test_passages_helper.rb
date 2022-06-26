@@ -2,7 +2,7 @@
 
 module TestPassagesHelper
   def result_title(test_passage)
-    "Correct: #{test_passage.correct_questions} from #{test_passage.questions_count}"
+    t('.correct', correct_questions: test_passage.correct_questions, questions_count: test_passage.questions_count)
   end
 
   def result_color(test_passage)
@@ -11,13 +11,13 @@ module TestPassagesHelper
 
   def result_text(test_passage)
     if test_passage.good_result?
-      "You passed test! (#{test_passage.result_percent}%)"
+      t('.passed', result_percent: test_passage.result_percent)
     else
-      "You didn't pass test! (#{test_passage.result_percent}%)"
+      t('.unpassed', result_percent: test_passage.result_percent)
     end
   end
 
   def view_current_question(test_passage)
-    "Question #{test_passage.current_question_number}/#{test_passage.questions_count}"
+    t('.current_question', question_num: test_passage.current_question_number, questions_count: test_passage.questions_count)#"Question #{test_passage.current_question_number}/#{test_passage.questions_count}"
   end
 end
