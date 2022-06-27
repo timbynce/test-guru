@@ -1,0 +1,11 @@
+<% if current_user.is_a?(Admin) %>
+  <nav class="navbar navbar-light bg-light">
+    <%= link_to 'TestGuru', root_path, class: 'navbar-brand' %>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Trololo</a>
+    </li>
+  </nav>
+<% else %>
+  <nav class="navbar navbar-light bg-light">
+    <%= link_to 'TestGuru', root_path, class: 'navbar-brand' %>
+<% end %>

@@ -1,6 +1,6 @@
 ru:
   hello: "Привет мир"
-
+  
   helpers:
     submit:
       test:
@@ -53,7 +53,7 @@ ru:
 
   admin:
     nav:
-      welcome: "Привет, %{first_name} %{last_name} |"
+      welcome: "Привет, %{first_name} %{last_name}"
       logout: "Выйти"
       panel: "Панель администратора TestGuru "
     tests:
@@ -80,6 +80,11 @@ ru:
     questions:
       question:
         delete_confirmation: "Вы уверены?"
+
+  shared:
+    nav:
+      welcome: "Привет, %{first_name} %{last_name}"
+      logout: "Выйти"
     
   tests_mailer:
     completed_test:
@@ -91,7 +96,7 @@ ru:
     footer:
       about: "Это test-guru. Проект о тестах, их прохождении и о том как стать молодцом в ROR"
     application:
-      welcome: "Привет, %{first_name} %{last_name} |"
+      welcome: "Привет, %{first_name} %{last_name}"
       logout: "Выйти"
 
   categories:

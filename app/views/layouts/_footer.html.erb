@@ -1,6 +1,9 @@
 <footer>
-  <p><%= current_year %></p>
-  <p><%= github_url("timbynce", "test-guru") %></p>
-  <p><%= t(".about") %></p><p></p>
-  <p><a href="https://www.thinknetica.com" rel="nofollow" rel="noopener" target="_blank">Учебный проект в онлайне школе Thinknetica</a></p>
+  <nav class="navbar navbar-light bg-light">
+    <span class="navbar-text">
+      <p><%= t(".about") %></p>
+      <p><a href="https://www.thinknetica.com" rel="nofollow" rel="noopener" target="_blank">Учебный проект в онлайне школе Thinknetica</a></p>
+      <p><%= github_url("timbynce", "test-guru") %> | <%= current_year %></p>
+    </span>
+  </nav>
 </footer>
