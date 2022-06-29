@@ -3,12 +3,12 @@
     <%= link_to t('.new_test'), new_admin_test_path %>
   </p>
 
-  <table>
+  <table class="table">>
   <tr>
     <th><%= t('.title') %></th>
     <th><%= t('.level') %></th>
     <th><%= t('.questions') %></th>
-    <th colspan="3"><%= t('.actions') %></th>
+    <th colspan="3", style="text-align:center;"><%= t('.actions') %></th>
   </tr>
   
   <%= render @tests %>

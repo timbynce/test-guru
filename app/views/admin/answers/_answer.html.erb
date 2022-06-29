@@ -1,9 +1,10 @@
-<li>
-  <%= answer.body %><br>
-  <%= link_to 'Show', admin_answer_path(answer) %>
-  <%= link_to 'Edit', edit_admin_answer_path(answer) %>
-  <%= link_to 'Delete',
+<tr>
+  <td><%= answer.body %><br></td>
+  <td><%= link_to 'Show', admin_answer_path(answer), class: 'btn btn-outline-primary mt-1' %></td>
+  <td><%= link_to 'Edit', edit_admin_answer_path(answer), class: 'btn btn-outline-primary mt-1' %></td>
+  <td><%= link_to 'Delete',
               admin_answer_path(answer),
               method: :delete,
-              data: { confirm: 'Are you sure?' } %>
-</li>
+              data: { confirm: 'Are you sure?' },
+              class: 'btn btn-outline-primary mt-1' %>
+</tr>

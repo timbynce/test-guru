@@ -18,6 +18,6 @@ module TestPassagesHelper
   end
 
   def view_current_question(test_passage)
-    t('.current_question', question_num: test_passage.current_question_number, questions_count: test_passage.questions_count)#"Question #{test_passage.current_question_number}/#{test_passage.questions_count}"
+    t('.current_question', question_num: test_passage.current_question_number, questions_count: test_passage.questions_count)
   end
 end

@@ -1,5 +1,9 @@
-<h2><%= t('.header') %></h2>
+<div class="row justify-content-center mt-3">
+  <div class="col col-md-12">
+    <h2><%= t('.header') %></h2>
 
-<%= render 'form' %>
+    <%= render 'form' %>
 
-<%= link_to t('back', scope: 'helpers.submit'), admin_tests_path %>
+    <%= link_to t('back', scope: 'helpers.submit'), admin_tests_path %>
+  </div>
+</div>

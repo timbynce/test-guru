@@ -6,10 +6,14 @@
   <%= form.text_area :body, id: :answer_body, rows: 7, cols: 60 %>
 </p>
   
-<p> 
-  <%= form.label :correct %>:
-  <%= form.check_box :correct, id: :answer_correct %>
+<p>
+  <div class="form-check">
+    <%= form.label :correct, class: 'form-check-label' do %>
+      <%= form.check_box :correct, id: :answer_correct, class: 'form-check-input' %>
+      Correct
+    <% end %>
+  </div>
 </p>
 
-<p><%= form.submit %></p>
+<p><%= form.submit class: 'btn btn-primary mt-1' %></p>
 <% end %>
