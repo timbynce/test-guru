@@ -50,6 +50,9 @@ ru:
       unpassed: "Ты не сдал тест! %{result_percent}"
       header: "Тест %{title}"
       back: "Назад к списку тестов"
+    gist:
+      success: "Gist успешно сохранен"
+      failure: "Во время сохранения gist произошла ошибка"
 
   admin:
     nav:

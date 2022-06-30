@@ -54,6 +54,9 @@ en:
       unpassed: "You didn't pass test! %{result_percent}"
       header: "Test %{title}"
       back: "Back to tests list"
+    gist:
+      success: "Gist successfully saved"
+      failure: "Error on gist save"
 
   admin:
     nav:

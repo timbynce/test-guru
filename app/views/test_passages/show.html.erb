@@ -1,10 +1,10 @@
 <div class="row justify-content-left mt-3">
   <div class="form-group">
     <h1><%= t('.header', title: @test_passage.title) %></h1>
+    <p>
+      <b><%= @test_passage.current_question.body %></b>
+    </p>
 
-    <b>
-      <%= @test_passage.current_question.body %>
-    </b>
     <p>
       <%= view_current_question(@test_passage)%>
     </p>
@@ -19,6 +19,7 @@
       </div>
       <p><%= link_to t('back', scope: 'helpers.submit'), tests_path, class: 'btn btn-primary mt-1' %> </p>
 
+      <p><%= link_to 'Gist Question', gist_test_passage_path(@test_passage), method: :post %></p>
       <p><%= form.submit class: 'btn btn-primary mt-1' %></p>
       <% end %>
   </div>
