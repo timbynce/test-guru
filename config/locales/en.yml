@@ -55,7 +55,7 @@ en:
       header: "Test %{title}"
       back: "Back to tests list"
     gist:
-      success: "Gist successfully saved"
+      success: "Gist successfully saved and shared at link: %{link_to_gist}"
       failure: "Error on gist save"
 
   admin:

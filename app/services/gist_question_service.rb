@@ -1,20 +1,29 @@
 class GistQuestionService
+  ACCESS_TOKEN = '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'
 
-  def initialize(question, client: nil)
+  HtmlObject = Struct.new(:success?, :html_url)
+
+  def initialize(question, client: network_client)
     @question = question
     @test = @question.test
-    @client = client || GitHubClient.new
+    @client = client
   end
 
   def call
-    @client.create_gist(gist_params)
+    response = @client.create_gist(gist_params)
+    HtmlObject.new(response.html_url.present?, response.html_url)
   end
 
   private
 
+  def network_client
+    Octokit::Client.new(access_token: ACCESS_TOKEN)
+  end
+
   def gist_params
     {
       description: "A question about #{@test.title} form TEstGuru",
+      public: true,
       files: {
         'test-guru-question.txt' => {
           content: gist_content

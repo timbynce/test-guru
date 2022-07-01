@@ -51,7 +51,7 @@ ru:
       header: "Тест %{title}"
       back: "Назад к списку тестов"
     gist:
-      success: "Gist успешно сохранен"
+      success: "Gist успешно сохранен и доступен по ссылке: %{link_to_gist}"
       failure: "Во время сохранения gist произошла ошибка"
 
   admin:
