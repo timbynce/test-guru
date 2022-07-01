@@ -1,6 +1,4 @@
 class GistQuestionService
-  ACCESS_TOKEN = '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'
-
   HtmlObject = Struct.new(:success?, :html_url)
 
   def initialize(question, client: network_client)
@@ -17,7 +15,7 @@ class GistQuestionService
   private
 
   def network_client
-    Octokit::Client.new(access_token: ACCESS_TOKEN)
+    Octokit::Client.new(access_token: ENV['ACCESS_TOKEN'])
   end
 
   def gist_params

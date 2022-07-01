@@ -1,4 +1,6 @@
 Rails.application.configure do
+  ENV['ACCESS_TOKEN'] = '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'
+  
   # Settings specified here will take precedence over those in config/application.rb.
 
   # In the development environment your application's code is reloaded on

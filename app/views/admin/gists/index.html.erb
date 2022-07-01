@@ -1,0 +1,11 @@
+<h2><%= t('.header') %></h2>
+  <table class="table">>
+  <tr>
+    <th><%= t('.gist_url') %></th>
+    <th><%= t('.user') %></th>
+    <th><%= t('.question') %></th>
+  </tr>
+  
+  <%= render @gists %>
+</table>
+<%= link_to t('back', scope: 'helpers.submit'), admin_tests_path, class: 'btn btn-primary mt-1' %>

@@ -63,6 +63,9 @@ en:
       welcome: "Welcome, %{first_name} %{last_name} |"
       logout: "Log out"
       panel: "TestGuru Admin Panel"
+    gists:
+      index:
+        header: "Gists"
     tests:
       index:
         header: "Tests"

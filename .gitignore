@@ -40,3 +40,6 @@
 /yarn-error.log
 yarn-debug.log*
 .yarn-integrity
+/rails/test-guru/config/app_environment_variables.rb
+/config/app_environment_variables.rb
+/config/environments/app_environment_variables.rb
