@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class GistQuestionService
   HtmlObject = Struct.new(:success?, :html_url)
 

@@ -1,5 +1,5 @@
 Rails.application.configure do
-  ENV['ACCESS_TOKEN'] = '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'
+  ENV['ACCESS_TOKEN'] = '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'
   
   # Settings specified here will take precedence over those in config/application.rb.
 
