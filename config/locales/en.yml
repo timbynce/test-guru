@@ -54,12 +54,20 @@ en:
       unpassed: "You didn't pass test! %{result_percent}"
       header: "Test %{title}"
       back: "Back to tests list"
+    
+  gists:
+    create:
+      success: "Gist successfully saved and shared at link: %{gist_url}"
+      failure: "Error on gist save"
 
   admin:
     nav:
       welcome: "Welcome, %{first_name} %{last_name} |"
       logout: "Log out"
       panel: "TestGuru Admin Panel"
+    gists:
+      index:
+        header: "Gists"
     tests:
       index:
         header: "Tests"

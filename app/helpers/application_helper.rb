@@ -12,7 +12,7 @@ module ApplicationHelper
   def flash_messages
     content_tag :div do
       flash.each do |key, message|
-        concat content_tag(:div, message, class: "alert alert-#{flash_level_to_bootstrap(key)}", role: 'alert')
+        concat content_tag(:div, message.html_safe, class: "alert alert-#{flash_level_to_bootstrap(key)}", role: 'alert')
       end
     end
   end

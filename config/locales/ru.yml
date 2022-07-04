@@ -51,11 +51,19 @@ ru:
       header: "Тест %{title}"
       back: "Назад к списку тестов"
 
+  gists:
+    create:
+      success: "Gist успешно сохранен и доступен по ссылке: %{gist_url}"
+      failure: "Во время сохранения gist произошла ошибка"
+
   admin:
     nav:
       welcome: "Привет, %{first_name} %{last_name}"
       logout: "Выйти"
       panel: "Панель администратора TestGuru "
+    gists:
+      index:
+        header: "Доступные gists"
     tests:
       index:
         header: "Доступные тесты"
