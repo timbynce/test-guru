@@ -12,7 +12,7 @@ class GistsController < ApplicationController
 
     if result.success?
       Gist.create(gist_url: result.html_url, user: current_user, question: @test_passage.current_question)
-      flash_options = { notice: t('.success', gist_url: result.html_url) }
+      flash_options = { notice: t('.success', gist_url: gist_url(result))}
     else
       flash_options = { alert: t('.failure') }
     end
@@ -21,6 +21,10 @@ class GistsController < ApplicationController
   end
 
   private
+
+  def gist_url(gist)
+    view_context.link_to(gist.html_url, gist.html_url, target: '_blank')
+  end
 
   def find_test_passage
     @test_passage = TestPassage.find(params[:test_passage_id])
