@@ -1,5 +1,4 @@
 Rails.application.configure do
-  ENV['GITHUB_ACCESS_TOKEN'] = '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'
   
   # Settings specified here will take precedence over those in config/application.rb.
 
