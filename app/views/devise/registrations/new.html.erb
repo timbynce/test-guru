@@ -33,11 +33,12 @@
                 <%= f.password_field :password, autocomplete: "new-password", class: 'form-control'%>
               </p>
 
-              <p>
+              <p class="check-pass-input pointer">               
                 <%= f.label :password_confirmation %><br />
                 <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-control', placeholder: "Repeat your password" %>
+                <%= octicon 'check-circle-fill', class: 'text-success hide mt-2'%>
+                <%= octicon 'x-circle-fill', class: 'text-danger hide mt-2'%>
               </p>
-              
               <%= f.submit "Sign up", class: 'btn btn-primary' %>
             </div>
           </div>
