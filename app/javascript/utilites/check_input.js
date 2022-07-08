@@ -1,12 +1,12 @@
 $(document).on('turbolinks:load', function() {
-  var control = document.querySelector('.check-pass-input')
+  const control = document.querySelector('.check-pass-input')
   
   if (control) { $(control).on('input', checkPassInput) }
 })
 
 function checkPassInput(){
-  var form_pass = document.querySelector('[name="user[password]"]').value
-  var form_confirm = document.querySelector('[name="user[password_confirmation]').value
+  let form_pass = document.querySelector('[name="user[password]"]').value
+  let form_confirm = document.querySelector('[name="user[password_confirmation]').value
 
   if (form_pass == form_confirm) { 
     this.querySelector('.octicon-check-circle-fill').classList.remove('hide') 
