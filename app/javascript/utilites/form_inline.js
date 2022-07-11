@@ -1,9 +1,9 @@
-$(document).on('turbolinks:load', function() {
+document.addEventListener('turbolinks:load', function() {
   const controls = document.querySelectorAll('.form-inline-link')
 
   if (controls.length) {
     for (let i = 0; i < controls.length; i++){
-      $(controls[i]).on('click',formInlineLinkHandler)
+      controls[i].addEventListener('click',formInlineLinkHandler)
     }
   }
   

@@ -1,7 +1,7 @@
-$(document).on('turbolinks:load', function() {
+document.addEventListener('turbolinks:load', function() {
   const control = document.querySelector('.check-pass-input')
   
-  if (control) { $(control).on('input', checkPassInput) }
+  if (control) { control.addEventListener('input', checkPassInput) }
 })
 
 function checkPassInput(){
