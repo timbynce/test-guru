@@ -89,6 +89,8 @@ en:
         header: "Test edit"
       new:
         header: "Create new test"
+      form_inline:
+        submit: "OK"
     questions:
       question:
         delete_confirmation: "Are you sure?"          
