@@ -34,7 +34,7 @@ class TestPassage < ApplicationRecord
   end
 
   def current_question_number
-    questions.count - questions.following(current_question).count
+    questions_count - questions.following(current_question).count
   end
 
   private

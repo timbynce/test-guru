@@ -1,7 +1,7 @@
-$(document).on('turbolinks:load', function() {
+document.addEventListener('turbolinks:load', function() {
   const control = document.querySelector('.sort-by-title')
   
-  if (control) { $(control).on('click', sortRowsByTitle) }
+  if (control) { control.addEventListener('click', sortRowsByTitle) }
 })
 
 

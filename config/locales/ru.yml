@@ -85,6 +85,8 @@ ru:
         header: "Изменение теста"
       new:
         header: "Создание нового теста"
+      form_inline:
+        submit: "OK"
     questions:
       question:
         delete_confirmation: "Вы уверены?"
