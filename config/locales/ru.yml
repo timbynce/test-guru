@@ -10,6 +10,7 @@ ru:
       show: "Показать"
       edit: "Изменить"
       delete: "Удалить"
+    admin_panel: "Панель Администратора"
         
     label:
       test:
@@ -44,6 +45,7 @@ ru:
     show:
       header: "Сдаем тест %{title}"
       current_question: "Вопрос %{question_num}/%{questions_count}"
+      gist_question: "Сделать заметку"
     result:
       correct: "Правильно: %{correct_questions} из %{questions_count}"
       passed: "Ты сдал тест! %{result_percent}"
@@ -61,6 +63,7 @@ ru:
       welcome: "Привет, %{first_name} %{last_name}"
       logout: "Выйти"
       panel: "Панель администратора TestGuru "
+      gists: "Заметки"
     gists:
       index:
         header: "Доступные gists"
@@ -90,6 +93,8 @@ ru:
     questions:
       question:
         delete_confirmation: "Вы уверены?"
+      show:
+        new_answer: "Новый вопрос"
 
   shared:
     nav:

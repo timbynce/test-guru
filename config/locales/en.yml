@@ -10,6 +10,7 @@ en:
     show: "Show"
     edit: "Edit"
     delete: "Delete"
+    admin_panel: "Admin Panel"
 
     label:
       test:
@@ -48,6 +49,7 @@ en:
     show:
       header: "Passing %{title} test"
       current_question: "Question %{question_num}/%{questions_count}"
+      gist_question: "Gist question"
     result:
       correct: "Correct: %{correct_questions} from %{questions_count}"
       passed: "You passed test! %{result_percent}"
@@ -65,6 +67,7 @@ en:
       welcome: "Welcome, %{first_name} %{last_name} |"
       logout: "Log out"
       panel: "TestGuru Admin Panel"
+      gists: "Gists"
     gists:
       index:
         header: "Gists"
@@ -93,7 +96,9 @@ en:
         submit: "OK"
     questions:
       question:
-        delete_confirmation: "Are you sure?"          
+        delete_confirmation: "Are you sure?"
+      show:
+        new_answer: "New question"        
 
   tests_mailer:
     completed_test:

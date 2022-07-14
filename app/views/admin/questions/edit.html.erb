@@ -2,6 +2,6 @@
   <div class="col col-md-12">
     <%= render 'form' %>
 
-    <%= link_to 'Back', admin_test_path(@question.test), class: 'btn btn-primary mt-1' %>
+    <%= link_to t('back', scope: 'helpers.submit'), admin_test_path(@question.test), class: 'btn btn-primary mt-1' %>
   </div>
 </div>

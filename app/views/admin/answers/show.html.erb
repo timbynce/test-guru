@@ -17,6 +17,6 @@
       <%= @answer.correct %>
     </p>
 
-    <%= link_to 'Back', admin_question_path(@answer.question), class: 'btn btn-primary mt-1' %>
+    <%= link_to t('back', scope: 'helpers.submit'), admin_question_path(@answer.question), class: 'btn btn-primary mt-1' %>
   </div>
 </div>
