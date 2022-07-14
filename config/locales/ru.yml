@@ -11,12 +11,18 @@ ru:
       edit: "Изменить"
       delete: "Удалить"
     admin_panel: "Панель Администратора"
+    sign_in: "Войти"
+    registration: "Регистрация"
+    delete_confirmation: "Вы уверены?"
         
     label:
       test:
         title: "Название"
         level: "Уровень"
         category_id: "Категория"
+      devise:
+        registration:
+          first_name: "ololo"
 
   shared:
     errors:
@@ -91,10 +97,23 @@ ru:
       form_inline:
         submit: "OK"
     questions:
-      question:
-        delete_confirmation: "Вы уверены?"
       show:
-        new_answer: "Новый вопрос"
+        new_answer: "Новый ответ"
+        answers: "Варианты ответа"
+      form: 
+        new_question: "Создать новый вопрос для %{test_name}"
+        enter_your_question: "Введите текст вопроса"
+    answers:
+      show:
+        answer: "Ответ"
+        question: "Вопрос"
+        correct: "Правильный"
+      new:
+        new_answer: "Новый ответ"
+      edit:
+        edit_answer: "Редактирование ответа"
+      form:
+        correct: "Правильный"
 
   shared:
     nav:
@@ -120,3 +139,8 @@ ru:
     Machine Learning: "Машинное обучение"
     Mobile Dev: "Мобильная разработка"
     Sports: "Спорт"
+  
+  devise:
+    registrations:
+      new:
+        sign_up: "Регистрация"

@@ -23,6 +23,9 @@ en:
       header:
         one: "%{count} error detected"
         other: "%{count} errors detected"
+    nav:
+      sign_in: "Sign In"
+      registration: "Registration"
 
   tests:
     index:
@@ -95,10 +98,21 @@ en:
       form_inline:
         submit: "OK"
     questions:
-      question:
-        delete_confirmation: "Are you sure?"
       show:
-        new_answer: "New question"        
+        new_answer: "New answer" 
+        answers: "Answers"
+        correct: "Correct"
+      form: 
+        new_question: "Create new %{test_name} question"   
+        enter_your_question: "Enter your question"
+    answers:
+      show:
+        answer: "Answer"
+        question: "Question"
+      new:
+        new_answer: "New answer" 
+      form:
+        correct: "Correct"
 
   tests_mailer:
     completed_test:
@@ -119,3 +133,8 @@ en:
     Machine Learning: "Machine Learning"
     Mobile Dev: "Mobile Dev"
     Sports: "Sports"
+
+  devise:
+    registrations:
+      new:
+        sign_up: "Sign Up"

@@ -1,19 +1,19 @@
 <div class="row justify-content-left mt-3">
   <div class="form-group">
-    <h3>Question</h3>
+    <h3><%= t('.question') %></h3>
 
     <p>
       <%= @answer.question.body %>
     </p>
 
-    <h3>Answer</h3>
+    <h3><%= t('.answer') %></h3>
 
     <p>
       <%= @answer.body %>
     </p>
 
     <p>
-      <b>Correct:</b>
+      <b><%= t('.correct') %></b>
       <%= @answer.correct %>
     </p>
 

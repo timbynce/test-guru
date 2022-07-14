@@ -16,7 +16,7 @@
       <% end %>
       </p>
     <% else %>
-      <p class="nav guest"> <%= link_to 'Sign in', new_user_session_path, method: :get %> | <%=link_to 'Registration', new_user_registration_path, method: :get%> </p>
+      <p class="nav guest"> <%= link_to t('helpers.sign_in'), new_user_session_path, method: :get %> | <%=link_to t('helpers.registration'), new_user_registration_path, method: :get%> </p>
     <% end %>
   </span>
 </nav>
