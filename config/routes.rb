@@ -21,6 +21,8 @@ Rails.application.routes.draw do
     resources :gists, only: %i[new create], shallow: true
   end
 
+  resources :feedbacks, only: %i[new create], shallow: true
+
   namespace :admin do
     resources :gists, only: :index
 

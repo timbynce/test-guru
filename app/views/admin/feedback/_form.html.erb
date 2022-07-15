@@ -1,0 +1,4 @@
+<%= form_with url: feedbacks_path do |form| %>
+  <%= form.text_field :body %>
+  <p><%= form.submit class: 'btn btn-primary mt-1' %></p>
+<% end  %>

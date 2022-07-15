@@ -45,6 +45,8 @@ en:
       easy: "Easy"
       advanced: "Advanced"
       hard: "Hard"
+    start:
+      failure: "Тест недоступен для прохождения"
 
   test_passages:
     result:
@@ -65,15 +67,33 @@ en:
       success: "Gist successfully saved and shared at link: %{gist_url}"
       failure: "Error on gist save"
 
+  feedbacks:
+    new:
+      new_feedback: "New Feedback"
+    form:
+      feedback: "Feedback"
+    create:
+      success: "Feedback sucessfully delivered"
+      failure: "Error on deliver feedback"
+
   admin:
     nav:
       welcome: "Welcome, %{first_name} %{last_name} |"
       logout: "Log out"
       panel: "TestGuru Admin Panel"
       gists: "Gists"
+      feedback: "Feedback"
+    feedback:
+      new:
+        new_feedback: "New feedback"
+      form:
+        feedback: "Feedback"
     gists:
       index:
         header: "Gists"
+        user: "User"
+        gist_url: "Gist Url"
+        question: "Question"
     tests:
       index:
         header: "Tests"
