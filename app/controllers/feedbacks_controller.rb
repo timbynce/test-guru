@@ -6,7 +6,6 @@ class FeedbacksController < ApplicationController
 
   def create
     @feedback = Feedback.new(feedback_params[:body])
-    byebug
     if FeedbackMailer.completed_feedback(@feedback.body, current_user.email).deliver_now
       flash_options = { alert: t('.success') }
     else
