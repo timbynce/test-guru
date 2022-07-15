@@ -13,7 +13,8 @@
           <%= link_to t('admin.nav.feedback'), new_feedback_path %> 
         </p>
       <% else %>
-        <p> <%= link_to t(".logout"), destroy_user_session_path, method: :delete%> <p> 
+        <p> <%= link_to t(".logout"), destroy_user_session_path, method: :delete%> |
+            <%= link_to t('.feedback'), new_feedback_path %>  <p> 
       <% end %>
       </p>
     <% else %>
