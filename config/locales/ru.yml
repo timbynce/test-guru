@@ -132,6 +132,7 @@ ru:
     nav:
       welcome: "Привет, %{first_name} %{last_name}"
       logout: "Выйти"
+      feedback: "Обратная связь"
     
   tests_mailer:
     completed_test:

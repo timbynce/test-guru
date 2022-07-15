@@ -26,6 +26,7 @@ en:
     nav:
       sign_in: "Sign In"
       registration: "Registration"
+      feedback: "Feedback"
 
   tests:
     index:
