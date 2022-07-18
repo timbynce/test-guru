@@ -124,7 +124,7 @@ ru:
       form: 
         new_question: "Создать новый вопрос для %{test_name}"
         enter_your_question: "Введите текст вопроса"
-        edit_test: "Edit %{test_name} test"
+        edit_test: "Изменение вопроса теста %{test_name}"
     answers:
       show:
         answer: "Ответ"
