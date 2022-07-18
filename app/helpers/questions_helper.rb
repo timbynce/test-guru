@@ -5,7 +5,7 @@ module QuestionsHelper
     if question.new_record?
       t(".new_question", test_name: question.test.title)
     else
-      "Edit #{question.test.title} question"
+      t(".edit_test", test_name: question.test.title)
     end
   end
 end
