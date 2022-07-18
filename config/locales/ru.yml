@@ -1,12 +1,4 @@
-ru:
-  shared:
-    errors:
-      header:
-        few: "Обнаружено %{count} ошибки"
-        many: "Обнаружено %{count} ошибок"
-        one: "Обнаружена %{count} ошибка"
-        other: "Обнаружено %{count} ошибки"
-        
+ru:        
   activerecord:
     models:
       question: "Вопрос"
@@ -16,6 +8,7 @@ ru:
       test:
         level: "Уровень"
         title: "Название"
+        questions: "Вопросы"
       answer:
         body: "Содержание"
       question:
@@ -157,6 +150,12 @@ ru:
       welcome: "Привет, %{first_name} %{last_name}"
       logout: "Выйти"
       feedback: "Обратная связь"
+    errors:
+      header:
+        one: "Обнаружена %{count} ошибка"
+        few: "Обнаружено %{count} ошибки"
+        many: "Обнаружено %{count} ошибок"
+        other: "Обнаружено %{count} ошибки"
     
   tests_mailer:
     completed_test:
