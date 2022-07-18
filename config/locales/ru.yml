@@ -1,6 +1,26 @@
 ru:
-  hello: "Привет мир"
-  
+  shared:
+    errors:
+      header:
+        few: "Обнаружено %{count} ошибки"
+        many: "Обнаружено %{count} ошибок"
+        one: "Обнаружена %{count} ошибка"
+        other: "Обнаружено %{count} ошибки"
+        
+  activerecord:
+    models:
+      question: "Вопрос"
+      test: "Тест"
+      answer: "Ответ"
+    attributes:
+      test:
+        level: "Уровень"
+        title: "Название"
+      answer:
+        body: "Содержание"
+      question:
+        body: "Содержание"
+
   helpers:
     submit:
       test:
@@ -29,14 +49,6 @@ ru:
         first_name: "Имя"
         last_name: "Фамилия"
 
-  shared:
-    errors:
-      header:
-        few: "Обнаружено %{count} ошибки"
-        many: "Обнаружено %{count} ошибок"
-        one: "Обнаружена %{count} ошибка"
-        other: "Обнаружено %{count} ошибки"
-
   tests:
     index:
       header: "Доступные тесты"
@@ -61,15 +73,15 @@ ru:
       gist_question: "Сделать заметку"
     result:
       correct: "Правильно: %{correct_questions} из %{questions_count}"
-      passed: "Ты сдал тест! %{result_percent}"
-      unpassed: "Ты не сдал тест! %{result_percent}"
+      passed: "Ты сдал тест! %{result_percent} %"
+      unpassed: "Ты не сдал тест! %{result_percent} %"
       header: "Тест %{title}"
       back: "Назад к списку тестов"
 
   gists:
     create:
       success: "Gist успешно сохранен и доступен по ссылке: %{gist_url}"
-      failure: "Во время сохранения gist произошла ошибка"
+      failure: "В системе уже есть gist с этим вопросом для текущего пользователя"
 
   feedbacks:
     new:
@@ -79,6 +91,7 @@ ru:
     create:
       success: "Отзыв успешно отправлен"
       failure: "Не удалось отправить отзыв"
+      empty: "Невозможно отправить пустой отзыв"
   
   admin:
     nav:

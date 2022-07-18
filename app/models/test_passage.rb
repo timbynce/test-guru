@@ -24,7 +24,7 @@ class TestPassage < ApplicationRecord
   end
 
   def result_percent
-    (correct_questions * 100.00) / questions.count
+    ((correct_questions * 100.00) / questions.count).round
   end
 
   def answered_questions_ids=(answer_ids)

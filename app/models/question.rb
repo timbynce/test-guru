@@ -7,5 +7,7 @@ class Question < ApplicationRecord
 
   validates :body, presence: true
 
+  delegate :author, to: :test
+
   scope :following, ->(question) { order(:id).where('id > ?', question.id) }
 end

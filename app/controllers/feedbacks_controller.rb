@@ -6,13 +6,18 @@ class FeedbacksController < ApplicationController
   def new; end
 
   def create
-    @feedback = Feedback.new(feedback_params[:body])
-    flash_options = if FeedbackMailer.completed_feedback(@feedback.body, current_user.email).deliver_now
-                      { alert: t('.success') }
-                    else
-                      { alert: t('.failure') }
-                    end
-    redirect_to tests_path, flash_options
+    if params[:body].blank?
+      flash_options = { alert: t('.empty') }
+      redirect_to tests_path, flash_options
+    else
+      @feedback = Feedback.new(feedback_params[:body])
+      flash_options = if FeedbackMailer.completed_feedback(@feedback.body, current_user.email).deliver_now
+                        { notice: t('.success') }
+                      else
+                        { alert: t('.failure') }
+                      end
+      redirect_to tests_path, flash_options
+    end
   end
 
   private
