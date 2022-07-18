@@ -20,6 +20,12 @@ ru:
         title: "Название"
         level: "Уровень"
         category_id: "Категория"
+      user:
+        email: "Электронная почта"
+        password: "Пароль"
+        password_confirmation: "Подтверждение пароля"
+        first_name: "Имя"
+        last_name: "Фамилия"
 
   shared:
     errors:
@@ -153,8 +159,3 @@ ru:
     Machine Learning: "Машинное обучение"
     Mobile Dev: "Мобильная разработка"
     Sports: "Спорт"
-  
-  devise:
-    registrations:
-      new:
-        sign_up: "Регистрация"

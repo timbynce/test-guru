@@ -12,30 +12,30 @@
               
               <p>
                 <%= f.label :first_name %><br />
-                <%= f.text_field :first_name, id: :user_first_name, class: 'form-control', placeholder: "First Name" %>
+                <%= f.text_field :first_name, id: :user_first_name, class: 'form-control', placeholder: t(".first_name") %>
               </p>
 
               <p>
                 <%= f.label :last_name %><br />
-                <%= f.text_field :last_name, id: :user_last_name, class: 'form-control', placeholder: "Last Name" %>
+                <%= f.text_field :last_name, id: :user_last_name, class: 'form-control', placeholder: t(".last_name") %>
               </p>
 
               <p>
                 <%= f.label :email %><br />
-                <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control', placeholder: "Email" %>
+                <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control', placeholder: t(".email") %>
               </p>
 
               <p>
                 <%= f.label :password %>
                 <% if @minimum_password_length %>
-                <em>(<%= @minimum_password_length %> characters minimum)</em>
+                <em><%= t('.char_min', min_chars: @minimum_password_length) %></em>
                 <% end %><br />
                 <%= f.password_field :password, autocomplete: "new-password", class: 'form-control'%>
               </p>
 
               <p class="check-pass-input pointer">               
                 <%= f.label :password_confirmation %><br />
-                <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-control', placeholder: "Repeat your password" %>
+                <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-control', placeholder: t(".repeat_pass") %>
                 <%= octicon 'check-circle-fill', class: 'text-success hide mt-2'%>
                 <%= octicon 'x-circle-fill', class: 'text-danger hide mt-2'%>
               </p>

@@ -44,7 +44,11 @@ class TestPassage < ApplicationRecord
   end
 
   def correct_answer?(answer_ids)
-    correct_answers.ids.sort == answer_ids.map(&:to_i).sort && answer_ids.present?
+    if answer_ids.present?
+      correct_answers.ids.sort == answer_ids.map(&:to_i).sort
+    else
+      false
+    end
   end
 
   def correct_answers
@@ -52,8 +56,8 @@ class TestPassage < ApplicationRecord
   end
 
   def next_question
-    return questions.first unless @answer_ids.present?
-
+    return questions.first unless self.current_question.present?
+    
     questions.following(current_question).first
   end
 end
