@@ -56,8 +56,8 @@ class TestPassage < ApplicationRecord
   end
 
   def next_question
-    return questions.first unless self.current_question.present?
-    
+    return questions.first unless current_question.present?
+
     questions.following(current_question).first
   end
 end

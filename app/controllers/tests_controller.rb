@@ -31,6 +31,6 @@ class TestsController < ApplicationController
   end
 
   def rescue_with_test_not_found
-    render plain: t("helpers.test_not_found")
+    render plain: t('helpers.test_not_found')
   end
 end

@@ -12,7 +12,7 @@ class GistsController < ApplicationController
 
     if result.success?
       Gist.create(gist_url: result.html_url, user: current_user, question: @test_passage.current_question)
-      flash_options = { notice: t('.success', gist_url: gist_url(result))}
+      flash_options = { notice: t('.success', gist_url: gist_url(result)) }
     else
       flash_options = { alert: t('.failure') }
     end
