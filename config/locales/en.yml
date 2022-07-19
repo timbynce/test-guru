@@ -10,6 +10,7 @@ en:
     show: "Show"
     edit: "Edit"
     delete: "Delete"
+    admin_panel: "Admin Panel"
 
     label:
       test:
@@ -22,6 +23,10 @@ en:
       header:
         one: "%{count} error detected"
         other: "%{count} errors detected"
+    nav:
+      sign_in: "Sign In"
+      registration: "Registration"
+      feedback: "Feedback"
 
   tests:
     index:
@@ -41,6 +46,8 @@ en:
       easy: "Easy"
       advanced: "Advanced"
       hard: "Hard"
+    start:
+      failure: "Тест недоступен для прохождения"
 
   test_passages:
     result:
@@ -48,6 +55,7 @@ en:
     show:
       header: "Passing %{title} test"
       current_question: "Question %{question_num}/%{questions_count}"
+      gist_question: "Gist question"
     result:
       correct: "Correct: %{correct_questions} from %{questions_count}"
       passed: "You passed test! %{result_percent}"
@@ -60,14 +68,33 @@ en:
       success: "Gist successfully saved and shared at link: %{gist_url}"
       failure: "Error on gist save"
 
+  feedbacks:
+    new:
+      new_feedback: "New Feedback"
+    form:
+      feedback: "Feedback"
+    create:
+      success: "Feedback sucessfully delivered"
+      failure: "Error on deliver feedback"
+
   admin:
     nav:
       welcome: "Welcome, %{first_name} %{last_name} |"
       logout: "Log out"
       panel: "TestGuru Admin Panel"
+      gists: "Gists"
+      feedback: "Feedback"
+    feedback:
+      new:
+        new_feedback: "New feedback"
+      form:
+        feedback: "Feedback"
     gists:
       index:
         header: "Gists"
+        user: "User"
+        gist_url: "Gist Url"
+        question: "Question"
     tests:
       index:
         header: "Tests"
@@ -92,8 +119,21 @@ en:
       form_inline:
         submit: "OK"
     questions:
-      question:
-        delete_confirmation: "Are you sure?"          
+      show:
+        new_answer: "New answer" 
+        answers: "Answers"
+        correct: "Correct"
+      form: 
+        new_question: "Create new %{test_name} question"   
+        enter_your_question: "Enter your question"
+    answers:
+      show:
+        answer: "Answer"
+        question: "Question"
+      new:
+        new_answer: "New answer" 
+      form:
+        correct: "Correct"
 
   tests_mailer:
     completed_test:
@@ -114,3 +154,4 @@ en:
     Machine Learning: "Machine Learning"
     Mobile Dev: "Mobile Dev"
     Sports: "Sports"
+    

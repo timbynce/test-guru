@@ -1,7 +1,7 @@
 <div class="row justify-content-center mt-3">
   <div class="col col-md-4">
     
-    <h2>Log in</h2>
+    <h2><%= t(".login") %></h2>
 
     <div class="card border-primary">
       <div class="card-body">
@@ -9,7 +9,7 @@
           <div class="form-group">
             <p>
               <%= f.label :email %>
-              <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control', placeholder: "Enter email" %>
+              <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control', placeholder: t(".enter_email") %>
             </p>
 
             <p>
@@ -21,12 +21,12 @@
               <div class="form-check">
                 <%= f.label :remember_me, class: 'form-check-label' do %>
                   <%= f.check_box :remember_me, class: 'form-check-input' %>
-                  Remember me
+                  <%= t('.remember') %>
                 <% end %>
               </div>
             <% end %>
             
-            <%= f.submit "Log in", class: 'btn btn-primary mt-1' %>
+            <%= f.submit t(".login"), class: 'btn btn-primary mt-1' %>
           </div>
         <% end %>
       </div>

@@ -1,21 +1,25 @@
 document.addEventListener('turbolinks:load', function() {
-  const control = document.querySelector('.check-pass-input')
+  const confirm = document.querySelector('[name="user[password_confirmation]')
+  const pass = document.querySelector('[name="user[password]"]')
   
-  if (control) { control.addEventListener('input', checkPassInput) }
+  if (confirm) { confirm.addEventListener('input', checkPassInput) }
+  if (pass) { pass.addEventListener('input', checkPassInput) }
 })
 
 function checkPassInput(){
   let form_pass = document.querySelector('[name="user[password]"]').value
   let form_confirm = document.querySelector('[name="user[password_confirmation]').value
+  let check = document.querySelector('.octicon-check-circle-fill')
+  let fail = document.querySelector('.octicon-x-circle-fill')
 
   if (form_pass == form_confirm) { 
-    this.querySelector('.octicon-check-circle-fill').classList.remove('hide') 
-    this.querySelector('.octicon-x-circle-fill').classList.add('hide')  
+    check.classList.remove('hide') 
+    fail.classList.add('hide')  
   } else if(form_confirm !== ''){
-    this.querySelector('.octicon-check-circle-fill').classList.add('hide') 
-    this.querySelector('.octicon-x-circle-fill').classList.remove('hide')
+    check.classList.add('hide') 
+    fail.classList.remove('hide')
   } else {
-    this.querySelector('.octicon-check-circle-fill').classList.add('hide') 
-    this.querySelector('.octicon-x-circle-fill').classList.add('hide') 
+    check.classList.add('hide') 
+    fail.classList.add('hide') 
   }
 }

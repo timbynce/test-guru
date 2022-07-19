@@ -1,19 +1,18 @@
 <div class="row justify-content-left mt-3">
   <div class="form-group">
     <p>
-      <strong>Body:</strong>
       <%= @question.body %>
     </p>
 
-    <h3>Answers</h3>
+    <h3><%= t('.answers') %></h3>
 
-    <%= link_to 'New answer', new_admin_question_answer_path(@question)%>
+    <%= link_to t('.new_answer'), new_admin_question_answer_path(@question)%>
 
     <table class="table">  
       <%= render @question.answers %>
     </table>
 
-    <%= link_to 'Edit', edit_admin_question_path(@question), class: 'btn btn-primary mt-1' %>
-    <%= link_to 'Back', admin_test_path(@question.test), class: 'btn btn-primary mt-1' %>
+    <%= link_to t('edit', scope: 'helpers.submit'), edit_admin_question_path(@question), class: 'btn btn-primary mt-1' %>
+    <%= link_to t('back', scope: 'helpers.submit'), admin_test_path(@question.test), class: 'btn btn-primary mt-1' %>
   </div>
 </div>

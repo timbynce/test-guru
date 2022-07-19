@@ -11,9 +11,20 @@ class TestsController < ApplicationController
   end
 
   def start
-    current_user.tests.push(@test)
-    redirect_to current_user.test_passage(@test)
+    if find_questions
+      current_user.tests.push(@test)
+      redirect_to current_user.test_passage(@test)
+    else
+      flash_options = { alert: t('.failure') }
+      redirect_to root_path, flash_options
+    end
   end
+
+  #def destroy
+  #  @test.destroy
+
+  #  redirect_to tests_path
+  #end
 
   private
 
@@ -21,7 +32,11 @@ class TestsController < ApplicationController
     @test = Test.find(params[:id])
   end
 
+  def find_questions
+    @test.questions.present?
+  end
+
   def rescue_with_test_not_found
-    render plain: "Test wasn't found"
+    render plain: t('helpers.test_not_found')
   end
 end

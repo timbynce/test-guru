@@ -1,6 +1,19 @@
-ru:
-  hello: "Привет мир"
-  
+ru:        
+  activerecord:
+    models:
+      question: "Вопрос"
+      test: "Тест"
+      answer: "Ответ"
+    attributes:
+      test:
+        level: "Уровень"
+        title: "Название"
+        questions: "Вопросы"
+      answer:
+        body: "Содержание"
+      question:
+        body: "Содержание"
+
   helpers:
     submit:
       test:
@@ -10,20 +23,24 @@ ru:
       show: "Показать"
       edit: "Изменить"
       delete: "Удалить"
+    admin_panel: "Панель Администратора"
+    sign_in: "Войти"
+    registration: "Регистрация"
+    delete_confirmation: "Вы уверены?"
+    not_auth: "Вы не авторизованы для просмотра данной страницы"
+    test_not_found: "Тест не найден"
         
     label:
       test:
         title: "Название"
         level: "Уровень"
         category_id: "Категория"
-
-  shared:
-    errors:
-      header:
-        few: "Обнаружено %{count} ошибки"
-        many: "Обнаружено %{count} ошибок"
-        one: "Обнаружена %{count} ошибка"
-        other: "Обнаружено %{count} ошибки"
+      user:
+        email: "Электронная почта"
+        password: "Пароль"
+        password_confirmation: "Подтверждение пароля"
+        first_name: "Имя"
+        last_name: "Фамилия"
 
   tests:
     index:
@@ -37,6 +54,8 @@ ru:
       easy: "Начальный"
       advanced: "Продвинутый"
       hard: "Сложный"
+    start:
+      failure: "Тест недоступен для прохождения"
         
   test_passages:
     result:
@@ -44,26 +63,43 @@ ru:
     show:
       header: "Сдаем тест %{title}"
       current_question: "Вопрос %{question_num}/%{questions_count}"
+      gist_question: "Сделать заметку"
     result:
       correct: "Правильно: %{correct_questions} из %{questions_count}"
-      passed: "Ты сдал тест! %{result_percent}"
-      unpassed: "Ты не сдал тест! %{result_percent}"
+      passed: "Ты сдал тест! %{result_percent} %"
+      unpassed: "Ты не сдал тест! %{result_percent} %"
       header: "Тест %{title}"
       back: "Назад к списку тестов"
 
   gists:
     create:
       success: "Gist успешно сохранен и доступен по ссылке: %{gist_url}"
-      failure: "Во время сохранения gist произошла ошибка"
+      failure: "В системе уже есть gist с этим вопросом для текущего пользователя"
 
+  feedbacks:
+    new:
+      new_feedback: "Новый отзыв"
+    form:
+      feedback: "Oтзыв"
+    create:
+      success: "Отзыв успешно отправлен"
+      failure: "Не удалось отправить отзыв"
+      empty: "Невозможно отправить пустой отзыв"
+  
   admin:
     nav:
       welcome: "Привет, %{first_name} %{last_name}"
       logout: "Выйти"
       panel: "Панель администратора TestGuru "
+      gists: "Заметки"
+      feedback: "Обратная связь"
+
     gists:
       index:
         header: "Доступные gists"
+        user: "Пользователь"
+        gist_url: "Ссылка"
+        question: "Вопрос"
     tests:
       index:
         header: "Доступные тесты"
@@ -88,13 +124,38 @@ ru:
       form_inline:
         submit: "OK"
     questions:
-      question:
-        delete_confirmation: "Вы уверены?"
+      show:
+        new_answer: "Новый ответ"
+        answers: "Варианты ответа"
+      form: 
+        new_question: "Создать новый вопрос для %{test_name}"
+        enter_your_question: "Введите текст вопроса"
+        edit_test: "Изменение вопроса теста %{test_name}"
+    answers:
+      show:
+        answer: "Ответ"
+        question: "Вопрос"
+        correct: "Правильный"
+      new:
+        new_answer: "Новый ответ"
+      edit:
+        edit_answer: "Редактирование ответа"
+      form:
+        correct: "Правильный"
+      create:
+        success: "Ответ успешно создан"
 
   shared:
     nav:
       welcome: "Привет, %{first_name} %{last_name}"
       logout: "Выйти"
+      feedback: "Обратная связь"
+    errors:
+      header:
+        one: "Обнаружена %{count} ошибка"
+        few: "Обнаружено %{count} ошибки"
+        many: "Обнаружено %{count} ошибок"
+        other: "Обнаружено %{count} ошибки"
     
   tests_mailer:
     completed_test:

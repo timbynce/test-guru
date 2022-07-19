@@ -5,13 +5,24 @@ class GistQuestionService
 
   def initialize(question, client: network_client)
     @question = question
-    @test = @question.test
-    @client = client
+    @test     = question.test
+    @user     = question.author
+    @client   = client
   end
 
   def call
-    response = @client.create_gist(gist_params)
-    HtmlObject.new(response.html_url.present?, response.html_url)
+    gist = @user.gists.build(question: @question)
+    
+    if gist.valid?
+      response = @client.create_gist(gist_params)
+      
+      gist.gist_url = response.html_url
+      gist.save
+
+      HtmlObject.new(gist.gist_url.present?, gist.gist_url)
+    else
+      HtmlObject.new(false)
+    end
   end
 
   private

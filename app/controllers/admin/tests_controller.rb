@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 class Admin::TestsController < Admin::BaseController
   before_action :set_tests, only: %i[index update_inline]
   before_action :find_test, only: %i[show destroy edit update start update_inline]
@@ -51,7 +52,7 @@ class Admin::TestsController < Admin::BaseController
   end
 
   private
-  
+
   def set_tests
     @tests = Test.all
   end
@@ -65,6 +66,6 @@ class Admin::TestsController < Admin::BaseController
   end
 
   def rescue_with_test_not_found
-    render plain: "Test wasn't found"
+    render plain: t('helpers.test_not_found')
   end
 end

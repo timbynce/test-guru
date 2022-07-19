@@ -1,10 +1,10 @@
 <tr>
   <td><%= answer.body %><br></td>
-  <td><%= link_to 'Show', admin_answer_path(answer), class: 'btn btn-outline-primary mt-1' %></td>
-  <td><%= link_to 'Edit', edit_admin_answer_path(answer), class: 'btn btn-outline-primary mt-1' %></td>
-  <td><%= link_to 'Delete',
+  <td><%= link_to t('show', scope: 'helpers.submit'), admin_answer_path(answer), class: 'btn btn-outline-primary mt-1' %></td>
+  <td><%= link_to t('edit', scope: 'helpers.submit'), edit_admin_answer_path(answer), class: 'btn btn-outline-primary mt-1' %></td>
+  <td><%= link_to t('delete', scope: 'helpers.submit'),
               admin_answer_path(answer),
               method: :delete,
-              data: { confirm: 'Are you sure?' },
+              data: { confirm: t('helpers.delete_confirmation') },
               class: 'btn btn-outline-primary mt-1' %>
 </tr>
