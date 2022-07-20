@@ -12,7 +12,7 @@ document.addEventListener('turbolinks:load', function() {
         timer.innerHTML = 'Осталось ' + Math.ceil((deadline - now)/1000) + ' секунд'
       }
       else{
-        let link= "http://localhost:3000/test_passages/" + testId + "/result"
+        let link= "https://testgurutimbynce.herokuapp.com/test_passages/" + testId + "/result"
         window.location.href = link
       }
     }, 1000)
