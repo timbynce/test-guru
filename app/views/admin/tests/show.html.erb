@@ -11,6 +11,11 @@
     </p>
 
     <p>
+      <strong><%= t('.time_to_pass') %></strong>
+      <%= @test.time_to_pass %>
+    </p>
+
+    <p>
       <strong><%= t('.questions') %></strong>
       <table class="table">  
       <%= render @test.questions %>
