@@ -13,6 +13,11 @@
     </p><br>
 
     <p>
+      <%= form.label :time_to_pass %><br>
+      <%= form.number_field :time_to_pass, id: :test_time_to_pass, autofocus: true, autocomplete: "time to pass", class: 'form-control' %>
+    </p><br>
+
+    <p>
       <%= form.label :category_id %><br>
       <%= form.collection_select :category_id, Category.all, :id, :title_translated, promt: true %>
     </p>
