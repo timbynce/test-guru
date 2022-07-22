@@ -15,7 +15,7 @@ class TestPassage < ApplicationRecord
   delegate :questions, :title, :time_to_pass, to: :test
 
   def completed?
-    current_question.nil?
+    expired? || current_question.nil?
   end
 
   def questions_count
@@ -42,7 +42,7 @@ class TestPassage < ApplicationRecord
 
   def expired?
     return false unless time_to_pass.present?
-    
+
     Time.now > deadline_time
   end
   
