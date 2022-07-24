@@ -1,0 +1,21 @@
+<div class="row justify-content-left mt-3">
+  <div class="form-group">
+    <p>
+      <strong><%= t('.title') %></strong>
+      <%= @badge.title %>
+    </p>
+
+    <p>
+      <strong><%= t('.level') %></strong>
+      <%= @badge.level %>
+    </p>
+
+    <p>
+      <strong><%= t('.category') %></strong>
+      <%= @badge.category.title %>
+    </p>
+
+    <%= link_to t('edit', scope: 'helpers.submit'), edit_admin_badge_path(@badge), class: 'btn btn-primary mt-1' %>
+    <%= link_to t('back', scope: 'helpers.submit'), admin_badges_path, class: 'btn btn-primary mt-1' %>
+  </div>
+</div>

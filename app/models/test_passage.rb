@@ -2,7 +2,6 @@
 
 class TestPassage < ApplicationRecord
   SUCCESS_PERCENT = 85
-  MIN_TO_SEC = 60
 
   belongs_to :user
   belongs_to :test
@@ -12,7 +11,13 @@ class TestPassage < ApplicationRecord
 
   validate :expired_test, on: :update
 
-  delegate :questions, :title, :time_to_pass, to: :test
+  delegate :questions, :title, :time_to_pass, :category, :level, to: :test
+  delegate :passed_tests_with_level, to: :user, prefix: true
+  delegate :passed_tests_with_category, to: :user, prefix: true
+
+  scope :passed, -> { where('passed_percent >= ?', SUCCESS_PERCENT) }
+  scope :by_level, -> (level) { includes(:test).where(tests: { level: level }) }
+  scope :by_category, -> (category) { includes(:test).where(tests: { category: category }) }
 
   def completed?
     expired? || current_question.nil?
@@ -23,14 +28,25 @@ class TestPassage < ApplicationRecord
   end
 
   def good_result?
-    result_percent > SUCCESS_PERCENT && completed?
+    result_percent > SUCCESS_PERCENT
+  end
+
+  def reward_user
+    return false unless good_result?
+    
+    Badge.all.each do |badge|
+      if badge.rewarded_for?(self)
+        user.badge_rewards.create(badge: badge) 
+      end
+      
+    end
   end
 
   def result_percent
-    ((correct_questions * 100.00) / questions.count).round
+    ((correct_questions * 100.00) / questions_count).round
   end
 
-  def answered_questions_ids=(answer_ids)
+  def accept_params=(answer_ids)
     @answer_ids = answer_ids
 
     self.correct_questions += 1 if correct_answer?(answer_ids)
@@ -48,6 +64,18 @@ class TestPassage < ApplicationRecord
   
   def deadline_time
     created_at + time_to_pass.minutes
+  end
+
+  def attempts
+    user.test_passes(test_id).count
+  end
+
+  def update_result
+    return unless completed?
+
+    update!(passed_percent: result_percent)
+    reward_user
+    TestsMailer.completed_test(self).deliver_now
   end
 
   private

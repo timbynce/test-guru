@@ -1,0 +1,22 @@
+<tr>
+  <td class="align-middle">
+    <%= content_tag :span, badge.title, class: 'badge-title', data: { badge_id: badge.id } %>
+  </td>
+  <td class="align-middle"><%= badge.level %></td>
+  <td class="align-middle"><%= badge.category.title if badge.category %></td>
+  <td class="align-middle"><%= badge.attempts %></td>
+  <td class="align-middle"><%= link_to t('show', scope: 'helpers.submit'), admin_badge_path(badge), class: 'btn btn-outline-primary mt-1' %></td>
+  <td class="align-middle">
+    <%= link_to t('edit', scope: 'helpers.submit'), 
+                edit_admin_badge_path(badge),
+                data: { badge_id: badge.id }, 
+                class: 'btn btn-outline-primary mt-1' %>
+  </td>
+  <td class="align-middle">
+    <%= link_to t('delete', scope: 'helpers.submit'),
+                admin_badge_path(badge),
+                method: :delete,
+                data: { confirm: t('helpers.delete_confirmation') },
+                class: 'btn btn-outline-primary mt-1' %>
+  </td>
+</tr>

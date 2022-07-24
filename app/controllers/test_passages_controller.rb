@@ -9,10 +9,9 @@ class TestPassagesController < ApplicationController
   def result; end
 
   def update
-    @test_passage.update(answered_questions_ids: params[:answer_ids])
-    
-    if @test_passage.completed?
-      TestsMailer.completed_test(@test_passage).deliver_now
+    @test_passage.update(accept_params: params[:answer_ids])
+
+    if @test_passage.update_result
       redirect_to result_test_passage_path(@test_passage)
     else
       render :show
