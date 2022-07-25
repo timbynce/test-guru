@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Badge < ApplicationRecord
   belongs_to :category, optional: true
   has_many :badge_rewards, dependent: :destroy
@@ -20,7 +22,7 @@ class Badge < ApplicationRecord
   def one_attribute_present
     return if [level, category, attempts].any?(&:present?)
 
-    errors.add(:base, "Должен быть выбран как минимум 1 аттрибут")
+    errors.add(:base, 'Должен быть выбран как минимум 1 аттрибут')
   end
 
   def check_by_category(test_passage)
@@ -29,7 +31,7 @@ class Badge < ApplicationRecord
 
     total  = Test.where(category: category).count
     passed = test_passage.user_passed_tests_with_category(category).count(:test_id)
-    
+
     total == passed
   end
 

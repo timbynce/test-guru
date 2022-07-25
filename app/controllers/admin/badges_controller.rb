@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 class Admin::BadgesController < Admin::BaseController
-
   before_action :find_badge, only: %i[show destroy edit update]
 
   def index

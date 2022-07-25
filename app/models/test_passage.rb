@@ -16,8 +16,8 @@ class TestPassage < ApplicationRecord
   delegate :passed_tests_with_category, to: :user, prefix: true
 
   scope :passed, -> { where('passed_percent >= ?', SUCCESS_PERCENT) }
-  scope :by_level, -> (level) { includes(:test).where(tests: { level: level }) }
-  scope :by_category, -> (category) { includes(:test).where(tests: { category: category }) }
+  scope :by_level, ->(level) { includes(:test).where(tests: { level: level }) }
+  scope :by_category, ->(category) { includes(:test).where(tests: { category: category }) }
 
   def completed?
     expired? || current_question.nil?
@@ -33,12 +33,9 @@ class TestPassage < ApplicationRecord
 
   def reward_user
     return false unless good_result?
-    
+
     Badge.all.each do |badge|
-      if badge.rewarded_for?(self)
-        user.badge_rewards.create(badge: badge) 
-      end
-      
+      user.badge_rewards.create(badge: badge) if badge.rewarded_for?(self)
     end
   end
 
@@ -61,7 +58,7 @@ class TestPassage < ApplicationRecord
 
     Time.now > deadline_time
   end
-  
+
   def deadline_time
     created_at + time_to_pass.minutes
   end
@@ -81,7 +78,7 @@ class TestPassage < ApplicationRecord
   private
 
   def expired_test
-    errors.add(:base, "test is expired") if expired?
+    errors.add(:base, 'test is expired') if expired?
   end
 
   def set_current_question

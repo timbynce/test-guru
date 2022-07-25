@@ -17,8 +17,8 @@ class Test < ApplicationRecord
 
   scope :easy, -> { where(level: 0..1) }
   scope :advanced, -> { where(level: 2..4) }
-  scope :hard, -> { where(level: 5..Float::INFINITY) }  
-  
-  scope :list_by_category, ->(category) { where(category: category)}
+  scope :hard, -> { where(level: 5..Float::INFINITY) }
+
+  scope :list_by_category, ->(category) { where(category: category) }
   scope :list_by_level, ->(level) { where(level: level) }
 end
