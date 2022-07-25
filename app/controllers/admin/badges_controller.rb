@@ -38,6 +38,8 @@ class Admin::BadgesController < Admin::BaseController
     end
   end
 
+  def edit; end
+
   private
 
   def find_badge
@@ -45,8 +47,6 @@ class Admin::BadgesController < Admin::BaseController
   end
 
   def badge_params
-    params.require(:badge).permit(:title, :level, :category_id, :attempts)
+    params.require(:badge).permit(:title, :image, :level, :category_id, :attempts)
   end
-
-
 end

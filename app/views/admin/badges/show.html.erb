@@ -6,13 +6,28 @@
     </p>
 
     <p>
+      <% if @badge.image %>
+        <%= image_tag @badge.image %>
+      <% end %>
+    </p>
+
+    <p>
       <strong><%= t('.level') %></strong>
       <%= @badge.level %>
     </p>
 
     <p>
       <strong><%= t('.category') %></strong>
-      <%= @badge.category.title %>
+      <% if @badge.category %>
+        <%= @badge.category.title %>
+      <% end %>
+    </p>
+
+        <p>
+      <strong><%= t('.attempts') %></strong>
+      <% if @badge.attempts %>
+        <%= @badge.attempts %>
+      <% end %>
     </p>
 
     <%= link_to t('edit', scope: 'helpers.submit'), edit_admin_badge_path(@badge), class: 'btn btn-primary mt-1' %>

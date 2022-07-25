@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 2022_07_22_113122) do
 
   create_table "badges", force: :cascade do |t|
     t.string "title", null: false
-    t.string "image"
+    t.string "image", null: false
     t.integer "level"
     t.integer "attempts"
     t.bigint "category_id"

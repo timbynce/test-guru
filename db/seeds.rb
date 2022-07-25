@@ -57,7 +57,16 @@ answers = Answer.create!([
                          ])
 
 results = TestPassage.create!([
-                           { user: users[0], test: tests[0], current_question: questions[0], correct_questions: 1 },
-                           { user: users[1], test: tests[0], current_question: questions[1], correct_questions: 0 },
-                           { user: users[2], test: tests[3], current_question: questions[3], correct_questions: 1 }
-                         ])
+                                { user: users[0], test: tests[0], current_question: questions[0], correct_questions: 1 },
+                                { user: users[1], test: tests[0], current_question: questions[1], correct_questions: 0 },
+                                { user: users[2], test: tests[3], current_question: questions[3], correct_questions: 1 }
+                              ])
+
+
+badges = Badge.create!([
+                         { title: "Badge by category", image: "https://cdn-icons-png.flaticon.com/128/179/179249.png", category: categories[0] },
+                         { title: "Badge by level", image: "https://cdn-icons-png.flaticon.com/128/3787/3787181.png", level: 1 },
+                         { title: "Badge by attempts", image: "https://cdn-icons-png.flaticon.com/128/1910/1910476.png", attempts: 2 },
+                         { title: "Badge mixed", image: "https://cdn-icons-png.flaticon.com/128/1021/1021220.png", level: 1, category: categories[4] }
+                        ])
+                         
