@@ -31,14 +31,6 @@ class TestPassage < ApplicationRecord
     result_percent > SUCCESS_PERCENT
   end
 
-  def reward_user
-    return false unless good_result?
-
-    Badge.all.each do |badge|
-      user.badge_rewards.create(badge: badge) if badge.rewarded_for?(self)
-    end
-  end
-
   def result_percent
     ((correct_questions * 100.00) / questions_count).round
   end
@@ -71,8 +63,6 @@ class TestPassage < ApplicationRecord
     return unless completed?
 
     update!(passed_percent: result_percent)
-    reward_user
-    TestsMailer.completed_test(self).deliver_now
   end
 
   private

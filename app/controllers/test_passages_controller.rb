@@ -12,6 +12,7 @@ class TestPassagesController < ApplicationController
     @test_passage.update(accept_params: params[:answer_ids])
 
     if @test_passage.update_result
+      TestCompletionService.new(@test_passage).call
       redirect_to result_test_passage_path(@test_passage)
     else
       render :show

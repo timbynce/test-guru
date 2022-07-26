@@ -64,9 +64,8 @@ results = TestPassage.create!([
 
 
 badges = Badge.create!([
-                         { title: "Badge by category", image: "https://cdn-icons-png.flaticon.com/128/179/179249.png", category: categories[0] },
-                         { title: "Badge by level", image: "https://cdn-icons-png.flaticon.com/128/3787/3787181.png", level: 1 },
-                         { title: "Badge by attempts", image: "https://cdn-icons-png.flaticon.com/128/1910/1910476.png", attempts: 2 },
-                         { title: "Badge mixed", image: "https://cdn-icons-png.flaticon.com/128/1021/1021220.png", level: 1, category: categories[4] }
+                         { title: "Badge by category", image: "https://cdn-icons-png.flaticon.com/128/179/179249.png", rule_type: "category", rule_attribute_value: "5" },
+                         { title: "Badge by level", image: "https://cdn-icons-png.flaticon.com/128/3787/3787181.png", rule_type: "level", rule_attribute_value: "1"  },
+                         { title: "Badge by attempts", image: "https://cdn-icons-png.flaticon.com/128/1910/1910476.png", rule_type: "attempts", rule_attribute_value: "2" }
                         ])
                          

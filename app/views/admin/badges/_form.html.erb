@@ -14,25 +14,14 @@
 
     <p>
       <%= form.label :type %><br>
-      <%= form.select :badge_type, Badge::TYPE_BADGES.map  { |type| [ t(type), type ] }, class: "type_selector"  %>
+      <%= form.select :rule_type, Badge::TYPE_BADGES.map  { |type| [ t(type), type ] }, class: "type_selector"  %>
     </p>
 
     <div class="badge_options">
       <p>
-        <%= form.label :level %><br>
-        <%= form.number_field :level, id: :badge_level, autofocus: true, autocomplete: "level", class: 'form-control badge-options' %>
-      </p><br>
-
-      <p>
-        <%= form.label :category_id %><br>
-        <%= form.collection_select :category_id, Category.all, :id, :title_translated, promt: true, include_blank: true, class: 'form-control badge-options' %>
-      </p>
-    
-      <p>
-        <%= form.label :attempts %><br>
-        <%= form.number_field :attempts, id: :badge_attempts, autofocus: true, autocomplete: "attempts", class: 'form-control badge-options' %>
-      </p><br>
-      
+        <%= form.label :rule_attribute_value %><br>
+        <%= form.text_field :rule_attribute_value, id: :badge_rule_attribute_value, autofocus: true, class: 'form-control badge-options' %>
+      </p><br>      
     </div>
 
     <p><%= form.submit class: 'btn btn-primary mt-1' %></p>

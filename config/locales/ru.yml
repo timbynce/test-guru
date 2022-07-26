@@ -184,7 +184,8 @@ ru:
       welcome: "Привет, %{first_name} %{last_name}"
       logout: "Выйти"
       feedback: "Обратная связь"
-      my_badges: "Награды"
+      my_badges: "Мои Награды"
+      badges: "Награды"
     errors:
       header:
         one: "Обнаружена %{count} ошибка"

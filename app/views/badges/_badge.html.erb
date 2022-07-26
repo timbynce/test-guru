@@ -1,0 +1,8 @@
+<tr>
+  <td class="align-middle">
+    <%= content_tag :span, badge.title, class: 'badge-title', data: { badge_id: badge.id } %>
+  </td>
+  <td class="align-middle"><%= image_tag badge.image %></td>
+  <td class="align-middle"><%= badge.rule_type %></td>
+  <td class="align-middle"><%= badge.rule_attribute_value %></td>
+  </tr>
