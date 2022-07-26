@@ -12,10 +12,10 @@ class GistQuestionService
 
   def call
     gist = @user.gists.build(question: @question)
-    
+
     if gist.valid?
       response = @client.create_gist(gist_params)
-      
+
       gist.gist_url = response.html_url
       gist.save
 

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class TestCompletionService
   def initialize(test_passage)
     @test_passage = test_passage
@@ -15,7 +17,7 @@ class TestCompletionService
   def rewarded_for?(badge)
     return false unless @test_passage.good_result?
 
-    check = Badge::TYPE_BADGES.find { |type| type == badge.rule_type } 
+    check = Badge::TYPE_BADGES.find { |type| type == badge.rule_type }
     param = badge.rule_attribute_value
 
     send("check_by_#{check}?", param)
@@ -23,13 +25,16 @@ class TestCompletionService
 
   private
 
+  # эти два правила можно было бы заменить на нечто вида check_all_by_attribute,
+  # что сократило бы код. Но для единичных атрибутов, все не так однозначно.
+  # Плюс в check_all пришлось бы добавлять проверку по каким атрибутам можно запускать такое правило (например, по попыткам нельзя)
   def check_by_category?(category)
     category = category.to_i
     return false unless @test_passage.category.id == category
 
     total  = Test.where(category: category).count
     passed = @test_passage.user_passed_tests_with_category(category).count(:test_id)
-    
+
     total == passed
   end
 
