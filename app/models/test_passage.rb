@@ -2,6 +2,7 @@
 
 class TestPassage < ApplicationRecord
   SUCCESS_PERCENT = 85
+  MIN_TO_SEC = 60
 
   belongs_to :user
   belongs_to :test
@@ -9,7 +10,9 @@ class TestPassage < ApplicationRecord
 
   before_validation :set_current_question
 
-  delegate :questions, :title, to: :test
+  validate :expired_test, on: :update
+
+  delegate :questions, :title, :time_to_pass, to: :test
 
   def completed?
     current_question.nil?
@@ -37,7 +40,21 @@ class TestPassage < ApplicationRecord
     questions_count - questions.following(current_question).count
   end
 
+  def expired?
+    return false unless time_to_pass.present?
+    
+    Time.now > deadline_time
+  end
+  
+  def deadline_time
+    created_at + time_to_pass.minutes
+  end
+
   private
+
+  def expired_test
+    errors.add(:base, "test is expired") if expired?
+  end
 
   def set_current_question
     self.current_question = next_question
