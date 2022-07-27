@@ -5,6 +5,7 @@
   </td>
   <td class="align-middle"><%= test_level(test) %></td>
   <td class="align-middle"><%= test.questions.count %></td>
+  <td class="align-middle"><%= test.time_to_pass %></td>
   <td class="align-middle"><%= link_to t('show', scope: 'helpers.submit'), admin_test_path(test), class: 'btn btn-outline-primary mt-1' %></td>
   <td class="align-middle">
     <%= link_to t('edit', scope: 'helpers.submit'), 

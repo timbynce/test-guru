@@ -9,6 +9,7 @@ ru:
         level: "Уровень"
         title: "Название"
         questions: "Вопросы"
+        time_to_pass: "Ограничение времени (мин)"
       answer:
         body: "Содержание"
       question:
@@ -106,6 +107,7 @@ ru:
         title: "Название"
         level: "Уровень"
         questions: "Вопросы"
+        time_to_pass: "Ограничение времени (мин)"
         actions: "Действия"
         new_test: "Новый тест"
       show:
@@ -113,6 +115,7 @@ ru:
         level: "Уровень"
         questions: "Вопросы"
         new_question: "Новый вопрос"
+        time_to_pass: "Ограничение времени (мин)"
       test:
         delete_confirmation: "Вы уверены?"
       create:
