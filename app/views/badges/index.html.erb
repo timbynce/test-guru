@@ -1,0 +1,17 @@
+<h2><%= t('.header') %></h2>
+  <%= render 'shared/errors', resource: @badge %>
+
+  <table class="table">
+  <tr>
+    <th class="sort-by-title pointer">
+      <%= t('.title') %>
+      <%= octicon 'arrow-up', class: 'text-success hide'%>
+      <%= octicon 'arrow-down', class: 'text-success hide'%>
+    </th>
+    <th><%= t('.image') %></th>
+    <th><%= t('.rule') %></th>
+    <th><%= t('.attribute') %></th>
+  </tr>
+  
+  <%= render @badges %>
+</table>

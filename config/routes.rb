@@ -14,6 +14,9 @@ Rails.application.routes.draw do
     post :start, on: :member
   end
 
+  resources :badge_rewards, only: :index
+  resources :badges, only: :index
+
   resources :test_passages, only: %i[show update] do
     member do
       get :result
@@ -25,6 +28,8 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :gists, only: :index
+    
+    resources :badges
 
     resources :tests do
       patch :update_inline, on: :member

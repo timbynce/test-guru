@@ -1,0 +1,27 @@
+<div class="row justify-content-left mt-3">
+  <div class="form-group">
+    <p>
+      <strong><%= t('.title') %></strong>
+      <%= @badge.title %>
+    </p>
+
+    <p>
+      <% if @badge.image %>
+        <%= image_tag @badge.image %>
+      <% end %>
+    </p>
+
+    <p>
+      <strong><%= t('.rule_type') %></strong>
+      <%= @badge.rule_type %>
+    </p>
+
+    <p>
+      <strong><%= t('.rule_attribute_value') %></strong>
+      <%= @badge.rule_attribute_value %>
+    </p>
+
+    <%= link_to t('edit', scope: 'helpers.submit'), edit_admin_badge_path(@badge), class: 'btn btn-primary mt-1' %>
+    <%= link_to t('back', scope: 'helpers.submit'), admin_badges_path, class: 'btn btn-primary mt-1' %>
+  </div>
+</div>

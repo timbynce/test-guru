@@ -19,12 +19,6 @@ class Test < ApplicationRecord
   scope :advanced, -> { where(level: 2..4) }
   scope :hard, -> { where(level: 5..Float::INFINITY) }
 
-  def self.list_by_category(title)
-    joins(:category)
-      .where(categories: { title: title })
-      .order(title: :desc)
-      .pluck(:title)
-  end
-
+  scope :list_by_category, ->(category) { where(category: category) }
   scope :list_by_level, ->(level) { where(level: level) }
 end
