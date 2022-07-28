@@ -9,6 +9,7 @@ class TestPassagesController < ApplicationController
   def result; end
 
   def update
+
     @test_passage.update(accept_params: params[:answer_ids])
 
     if @test_passage.update_result

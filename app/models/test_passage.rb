@@ -2,6 +2,7 @@
 
 class TestPassage < ApplicationRecord
   SUCCESS_PERCENT = 85
+  MIN_TO_SEC = 60
 
   belongs_to :user
   belongs_to :test
@@ -10,6 +11,7 @@ class TestPassage < ApplicationRecord
   before_validation :set_current_question
 
   validate :expired_test, on: :update
+
 
   delegate :questions, :title, :time_to_pass, :category, :level, to: :test
   delegate :passed_tests_with_level, to: :user, prefix: true
@@ -69,6 +71,7 @@ class TestPassage < ApplicationRecord
 
   def expired_test
     errors.add(:base, 'test is expired') if expired?
+
   end
 
   def set_current_question
